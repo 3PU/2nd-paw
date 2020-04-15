@@ -1,0 +1,16 @@
+.banner {
+    background: url(../../static/img/index_paws.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 60vh;
+}
+
+.banner-heading {
+    padding-top: 3em;
+    color: white;
+}
+
+.bg-black {
+  background-color: #000 !important;
+}
