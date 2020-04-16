@@ -2,15 +2,22 @@
     background: url(../../static/img/index_paws.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center top;
-    height: 60vh;
+    background-position: left top 3em;
+    background-attachment: fixed;
+    height: 100vh;
 }
 
-.banner-heading {
-    padding-top: 3em;
-    color: white;
+.banner-chevron-container {
+    text-align: center;
 }
 
-.bg-black {
-  background-color: #000 !important;
+.chevron-container {
+    position: absolute;
+    font-size: 3em;
+    bottom: 0em;
+    color: #c2c3c3;
+}
+
+.footer-dark {
+  background-color: #343a40 !important;
 }
