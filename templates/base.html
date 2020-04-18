@@ -34,11 +34,17 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Browse Shop</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Pet Clothes</a>
+                            <a class="dropdown-item" href="{% url 'all_products' %}">All Products</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Pet Toys</a>
+                            <a class="dropdown-item" href="{% url 'products_animal_cat' %}">Cat Products</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Pet Supplies</a>
+                            <a class="dropdown-item" href="{% url 'products_animal_dog' %}">Dog Products</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'products_category_clothes' %}">Clothes</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'products_category_toys' %}">Toys</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'products_category_supplies' %}">Supplies</a>
                         </div>
                     </li>
                     {% if user.is_authenticated %}
@@ -61,7 +67,7 @@
                     {% endif %}
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search The Shop" aria-label="Search">
                 <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
