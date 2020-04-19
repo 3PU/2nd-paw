@@ -1,32 +1,57 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import Product
+from django.contrib import messages
+from .forms import CreateProductForm
+from django.contrib.auth.decorators import login_required
 
-"""Displays all products"""
 def all_products(request):
+    """Displays all products"""
     products = Product.objects.all()
     return render(request, "products.html", {"products": products})
 
-"""Displays cat products"""
 def products_animal_cat(request):
+    """Displays cat products"""
     products = Product.objects.filter(animal="Cat")
     return render(request, "products.html", {"products": products})
 
-"""Displays dog products"""
 def products_animal_dog(request):
+    """Displays dog products"""
     products = Product.objects.filter(animal="Dog")
     return render(request, "products.html", {"products": products})
 
-"""Displays clothes category"""
 def products_category_clothes(request):
+    """Displays clothes category"""
     products = Product.objects.filter(category="Clothes")
     return render(request, "products.html", {"products": products})
 
-"""Displays toys category"""
 def products_category_toys(request):
+    """Displays toys category"""
     products = Product.objects.filter(category="Toys")
     return render(request, "products.html", {"products": products})
 
-"""Displays supply category"""
 def products_category_supplies(request):
+    """Displays supply category"""
     products = Product.objects.filter(category="Supplies")
     return render(request, "products.html", {"products": products})
+
+@login_required
+def create_product(request, pk=None):
+    """Allows user to donate/create a product"""
+    if request.method == "POST":
+        product_form = CreateProductForm(request.POST, request.FILES)
+
+        if product_form.is_valid():
+            product_form.save()
+            return redirect("all_products")
+        
+        else:
+            product_form = CreateProductForm()
+    
+    else:
+        product_form = CreateProductForm()
+    
+    return render(request, "create_product.html", {'product_form': product_form})
+
+def product_detail(request, pk):
+    products = get_object_or_404(Product, id=id)
+    return render(request, "product_detail.html", {'product': product})
