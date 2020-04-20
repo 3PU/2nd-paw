@@ -3,8 +3,12 @@
 {% block page_title %}User Profile{% endblock %}
 
 {% block page_content %}
-    <p><strong>User Email:</strong> {{ profile.email }}</p>
-    <p><strong>Username:</strong> {{ profile.username }}</p>
-    <p><strong>First Name:</strong> {{ profile.first_name }}</p>
-    <p><strong>Last Name:</strong> {{ profile.last_name }}</p>
+    <div class="row justify-content-center form-container">
+        <div class="col-md-4 card">
+            <p><strong>User Email:</strong> {{ profile.email }}</p>
+            <p><strong>Username:</strong> {{ profile.username }}</p>
+            <p><strong>First Name:</strong> {{ profile.first_name }}</p>
+            <p><strong>Last Name:</strong> {{ profile.last_name }}</p>
+        </div>
+    </div>
 {% endblock %}
