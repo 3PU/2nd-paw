@@ -15,7 +15,7 @@ class Product(models.Model):
         ("Used", "Used"),
     )
 
-    name = models.CharField(max_length=250)
+    title = models.CharField(max_length=250)
     category = models.CharField(max_length=100, choices=category_choices)
     animal = models.CharField(max_length=20, choices=animal_choices)
     condition = models.CharField(max_length=20, choices=condition_choices)
@@ -24,4 +24,4 @@ class Product(models.Model):
     image = models.ImageField(upload_to="images")
 
     def __str__(self):
-        return self.name
+        return self.title

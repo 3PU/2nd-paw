@@ -52,6 +52,6 @@ def create_product(request, pk=None):
     
     return render(request, "create_product.html", {'product_form': product_form})
 
-def product_detail(request, pk):
+def product_detail(request, id):
     products = get_object_or_404(Product, id=id)
-    return render(request, "product_detail.html", {'product': product})
+    return render(request, "product_detail.html", {'product': products})
