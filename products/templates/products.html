@@ -6,28 +6,31 @@
 
 {% block page_content %}
 
-<div class="container products-container">
+<div class="products-container">
     <div class="row">
     {% for product in products %}
-                <div class="col-xs-12 col-md-5 col-lg-4 card">
-                <div class="d-flex justify-content-center">
-                    <div class="product-image" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
-                </div>
-                <div class="product-text-container">
-                    <h4>{{ product.name }}</h4>
-                    <p>{{ product.description }}</p>
-                    <h6><strong>Condition: </strong>{{ product.condition }}</h6>
-                    <h6><strong>Price: </strong>{{ product.price }} €</h6>
-                    <form method="POST" action="#">
-                        {% csrf_token %}
-                        <div class="input-group">
-                            <span class=input-group-btn>
-                            <button class="btn btn-light" type="submit">Add To Cart</button>
-                            </span>
-                        </div>        
-                    </form>
-                </div>
+        <div class="col-xs-12 col-md-5 col-lg-5 col-xl-3 card">
+            <div class="d-flex">
+                <div class="product-image" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
             </div>
+            <div class="product-text-container">
+                <h4>{{ product.title }}</h4>
+                <h6><strong>Suitable for: </strong>{{ product.animal }}s</h6>
+                <h6><strong>Condition: </strong>{{ product.condition }}</h6>
+                <h6><strong>Price: </strong>{{ product.price }} €</h6>
+                <form method="POST" action="#">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <a href="{% url 'product_detail' product.id %}" class="btn btn-light">Read More</a> 
+                        <span class=input-group-btn>
+                        {% if user.is_authenticated %}
+                        <button class="btn btn-light" type="submit">Add to cart</button>
+                        </span>
+                        {% else %} {% endif %}
+                    </div>        
+                </form>
+             </div>
+        </div>
     {% endfor %}
     </div>
 </div>
