@@ -10,32 +10,41 @@
 
 <div class="products-container">
     <div class="row justify-content-center">
-        {% for item in cart_items %}
-            <div class="col-xs-8 col-sm-6 col-lg-4 col-xl-4 card">
-                <div class="d-flex">
-                    <div class="product-image" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
-                </div>
-                <div class="product-text-container">
-                    <h4>{{ item.product.title }}</h4>
-                    <h6><strong>Price: </strong>{{ item.product.price }} €</h6>
-                    <form class="form-inline" method="POST" action="{% url 'adjust_cart' item.id %}">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            <label for="exampleInputAmount" class="sr-only">New Qty</label>
-                            <div class="input-group">
-                                <div class="input-group-addon"><strong>Qty: </strong>{{ item.quantity }}</div>
-                            </div>
-                        </div>                        
-                        <input name="quantity" type="hidden" value="0" class="form-control">
-                        <button type="submit" class="btn btn-light"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Remove</button>
-                    </form>
-                </div>
+        {% if product_count == 0 %}
+            <div class="col-10 no-cart-items">
+                <h4>There are currently no items in your shopping cart.</h4>
             </div>
-        {% endfor %}
+        {% else %}
+            {% for item in cart_items %}
+                <div class="col-xs-8 col-sm-6 col-lg-4 col-xl-4 card">
+                    <div class="d-flex">
+                        <div class="product-image" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
+                    </div>
+                    <div class="product-text-container">
+                        <h4>{{ item.product.title }}</h4>
+                        <h6><strong>Price: </strong>{{ item.product.price }} €</h6>
+                        <form class="form-inline" method="POST" action="{% url 'adjust_cart' item.id %}">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="exampleInputAmount" class="sr-only">New Qty</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><strong>Qty: </strong>{{ item.quantity }}</div>
+                                </div>
+                            </div>                        
+                            <input name="quantity" type="hidden" value="0" class="form-control">
+                            <button type="submit" class="btn btn-light"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Remove</button>
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
     </div>
-    <div class="row">
-        <p>Total: {{ total }}€</p>
-        <a href="/" class="btn btn-light" role="button"><span aria-hidden="true"></span>Checkout</a>
+    <hr>
+    <div class="row justify-content-end">
+        <div class="cart-total">
+            <p><strong>Total: </strong>{{ total }}€</p>
+            <a href="/" class="btn btn-light" role="button"><span aria-hidden="true"></span>Checkout</a>
+        </div>
     </div>
 </div>
 {% endblock %}
