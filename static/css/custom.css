@@ -18,6 +18,10 @@ html, body {
     padding-right: 1em;
 }
 
+.cart-icon .badge {
+    font-size: 0.6em;
+}
+
 /* ----------------------------------------- HEADER */
 
 .banner {
@@ -110,7 +114,7 @@ html, body {
 }
 
 .product-text-container form {
-    padding-top: 1.5em;
+    padding-top: 0em;
 }
 
 @media only screen and (max-width: 576px) {
