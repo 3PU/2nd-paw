@@ -23,11 +23,11 @@
                         <div class="form-group">
                             <label for="exampleInputAmount" class="sr-only">New Qty</label>
                             <div class="input-group">
-                                <div class="input-group-addon">Qty: {{ item.quantity }}</div>
-                                <input name="quantity" type="number" min="0" max="1" class="form-control">
+                                <div class="input-group-addon"><strong>Qty: </strong>{{ item.quantity }}</div>
                             </div>
-                        </div>
-                        <button type="submit" class="btn btn-light"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Update</button>
+                        </div>                        
+                        <input name="quantity" type="hidden" value="0" class="form-control">
+                        <button type="submit" class="btn btn-light"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Remove</button>
                     </form>
                 </div>
             </div>
