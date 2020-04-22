@@ -117,10 +117,28 @@ html, body {
     padding-top: 0em;
 }
 
+.product-detail .btn {
+    margin-left: 0;
+}
+
 @media only screen and (max-width: 576px) {
     .product-image {
         height: 12em;
         width: 12em;
+    }
+}
+
+/* ----------------------------------------- SHOPPING CART */
+
+.cart-total {
+    padding-right: 1em;
+    text-align: center;
+}
+
+.no-cart-items {
+    padding-top: 3em;
+    padding-bottom: 3em;
+    text-align: center;
 }
 
 /* ----------------------------------------- FOOTER */
