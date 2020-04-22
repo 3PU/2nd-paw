@@ -13,6 +13,10 @@ html, body {
 
 /* ----------------------------------------- NAVBAR */
 
+.navbar {
+    background-color: rgba(17, 11, 11, 0.7);
+}
+
 .cart-icon {
     font-size: 1.2em;
     padding-right: 1em;
@@ -28,7 +32,7 @@ html, body {
     background: url(../../static/img/index_paws.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: left top 3em;
+    background-position: left top;
     background-attachment: fixed;
     height: 100vh;
 }
@@ -40,7 +44,7 @@ html, body {
 .chevron-container {
     position: absolute;
     font-size: 3em;
-    bottom: 0em;
+    bottom: 1em;
     color: #c2c3c3;
 }
 
@@ -144,8 +148,8 @@ html, body {
 /* ----------------------------------------- FOOTER */
 
 .footer-container {
-    background-color: #343a40;
-    position: relative;
+    background-color: rgba(17, 11, 11, 0.6);
+    position: fixed;
     height: 3em;
     bottom: 0;
     width: 100%;
