@@ -7,9 +7,9 @@
 {% block page_content %}
 
 <div class="products-container">
-    <div class="row">
+    <div class="row justify-content-center">
     {% for product in products %}
-        <div class="col-xs-12 col-md-5 col-lg-5 col-xl-3 card">
+        <div class="col-xs-12 col-sm-10 col-lg-5 col-xl-3 card">
             <div class="d-flex">
                 <div class="product-image" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
             </div>
@@ -18,18 +18,19 @@
                 <h6><strong>Suitable for: </strong>{{ product.animal }}s</h6>
                 <h6><strong>Condition: </strong>{{ product.condition }}</h6>
                 <h6><strong>Price: </strong>{{ product.price }} €</h6>
-                <form method="POST" action="#">
-                    {% csrf_token %}
-                    <div class="input-group">
-                        <a href="{% url 'product_detail' product.id %}" class="btn btn-light">Read More</a> 
-                        <span class=input-group-btn>
-                        {% if user.is_authenticated %}
-                        <button class="btn btn-light" type="submit">Add to cart</button>
-                        </span>
-                        {% else %} {% endif %}
-                    </div>        
-                </form>
-             </div>
+                <div class="input-group">
+                    <a href="{% url 'product_detail' product.id %}" class="btn btn-light">Read More</a> 
+                    {% if user.is_authenticated %}
+                        <form method="POST" action="{% url 'add_item_to_cart' product.id %}">
+                            {% csrf_token %}
+                            <input name="quantity" type="number" min="1" max="1" class="form-control" placeholder="1">
+                            <button class="btn btn-light" type="submit">Add to cart</button>
+                        </form>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="btn btn-light">Buy</a>
+                    {% endif %}
+                </div>        
+            </div>
         </div>
     {% endfor %}
     </div>
