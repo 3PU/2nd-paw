@@ -89,12 +89,17 @@ html, body {
     -moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
+.product-image-container {
+    height: 200px;
+    padding: 1em;
+}
+
 .product-image {
-    margin: 1em;
-    border-radius: 0.5em;
-    background-size: cover;
-    width: 16em;
-    height: 16em;
+    margin-bottom: 1em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
 }
 
 .product-text-container {
@@ -133,7 +138,7 @@ html, body {
     }
 }
 
-/* ----------------------------------------- SHOPPING CART */
+/* ----------------------------------------- SHOPPING CART & CHECKOUT */
 
 .cart-total {
     padding-right: 1em;
@@ -146,11 +151,25 @@ html, body {
     text-align: center;
 }
 
+.cart-image {
+    background-position: right;
+}
+
+.cart-remove-button {
+    margin-left: 0;
+    margin-top: 0.5em;
+    padding: 0.3em;
+}
+
+.checkout-products-table {
+    text-align: center;
+}
+
 /* ----------------------------------------- FOOTER */
 
 .footer-container {
-    background-color: rgba(17, 11, 11, 0.6);
-    position: fixed;
+    background-color: rgba(17, 11, 11, 0.7);
+    position: relative;
     height: 3em;
     bottom: 0;
     width: 100%;

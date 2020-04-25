@@ -7,77 +7,73 @@
 {% block page_title %}Checkout{% endblock %}
 
 {% block head_js %}
-<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-<script type="text/javascript">
-    //<![CDATA[
-        Stripe.publishableKey = '{{ publishable }}';
-    //]]>
-</script>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script type="text/javascript">
+        //<![CDATA[
+            Stripe.publishableKey = '{{ publishable }}';
+        //]]>
+    </script>
 {% endblock %}
 
 {% block page_content %}
-
-<div class="products-container">
-    <div class="row justify-content-center">
-        {% for item in cart_items %}
-            <div class="col-xs-8 col-sm-6 col-lg-4 col-xl-4 card">
-                <div class="d-flex">
-                    <div class="product-image" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
-                </div>
-                <div class="product-text-container">
-                    <h4>{{ item.product.title }}</h4>
-                    <h6><strong>Price: </strong>{{ item.product.price }} €</h6>
-                    <h6><strong>Quantity: </strong>{{ item.quantity }}</h6>
-                    <form class="form-inline" method="POST" action="{% url 'adjust_cart' item.id %}">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            <label for="exampleInputAmount" class="sr-only">New Qty</label>
-                            <div class="input-group">
-                                <div class="input-group-addon"><strong>Qty: </strong>{{ item.quantity }}</div>
-                            </div>
-                        </div>                        
-                        <input name="quantity" type="hidden" value="0" class="form-control">
-                        <button type="submit" class="btn btn-light"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Remove</button>
-                    </form>
+    <div class="products-container checkout-products-table">
+        <div class="col-md-12 text-center">
+            <h5>Order Details</h5>
+        </div>
+        <div class="row justify-content-center">
+            <table class="table col-8 table-borderless table-hover">
+                <thead>
+                    <tr class="table-active">
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                    </tr>
+                </thead>
+                {% for item in cart_items %}
+                    <tr>
+                        <td>{{ item.product.title }}</td>
+                        <td>{{ item.product.price }}</td>
+                        <td>{{ item.quantity }}</td>
+                    </tr>
+                {% endfor %}                    
+            </table>
+            <div class="col-8">
+                <div class="cart-total">
+                    <p class="text-right"><strong>Total: </strong>{{ total }}€</p>
                 </div>
             </div>
-        {% endfor %}
+        </div>
+        <hr>
+        <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
+            <div id="credit-card-errors" style="display:none">
+                <div class="alert-message block-message error" id="stripe-error-message"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-12 text-center">
+                    <h5>Payment Details</h5>
+                </div>
+                <div class="col-xs-10 col-sm-5 col-lg-4">
+                    {{ order_form | as_bootstrap }}
+                </div>
+
+                <div class="col-xs-10 col-sm-5 col-lg-4">
+                    {{ payment_form | as_bootstrap }}
+                </div>
+                <div class="col-md-12 text-center">
+                    {% csrf_token %}
+                    <input class=" btn btn-secondary text-center" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
+                </div>
+            </div>
+        </form>
     </div>
-    <hr>
-    <div class="row justify-content-end">
-        <div class="cart-total">
-            <p><strong>Total: </strong>{{ total }}€</p>
-        </div>
-    </div>
-    <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
-        <legend>Payment Details</legend>
+    <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
 
-        <div id="credit-card-errors" style="display:none">
-            <div class="alert-message block-message error" id="stripe-error-message"></div>
-        </div>
-
-        <div class="form-group col-md-6">
-            {{ order_form | as_bootstrap }}
-        </div>
-
-        <div class="form-group col-md-6">
-            {{ payment_form | as_bootstrap }}
-        </div>
-
-        {% csrf_token %}
-        <div class="form-group col-md-12">
-            <input class=" btn btn-light" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
-        </div>
-    </form>
-</div>
-<script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
-
-{% if messages %}
-        <div>
-            {% for message in messages %}
-                {{ message}}
-            {% endfor %}
-        </div>
-    {% endif %}
+    {% if messages %}
+            <div>
+                {% for message in messages %}
+                    {{ message}}
+                {% endfor %}
+            </div>
+        {% endif %}
 
 {% endblock %}
