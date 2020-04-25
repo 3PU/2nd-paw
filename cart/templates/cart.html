@@ -9,12 +9,12 @@
 {% block page_content %}
 
 <div class="products-container">
-        {% if product_count == 0 %}
-            <div class="col-10 no-cart-items">
-                <h4>There are currently no items in your shopping cart.</h4>
-            </div>
-        {% else %}
-            {% for item in cart_items %}
+    {% if product_count == 0 %}
+        <div class="col-12 no-cart-items">
+            <h4>There are currently no items in your shopping cart.</h4>
+        </div>
+    {% else %}
+        {% for item in cart_items %}
             <div class="row justify-content-start">
                 <div class="col-xs-10 col-sm-4 image-container">
                     <div class="product-image cart-image" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
@@ -31,13 +31,13 @@
                 </div>
             </div>
             <hr>
+            <div class="row justify-content-center">
+                <div class="cart-total">
+                    <p><strong>Total: </strong>{{ total }}€</p>
+                    <a href="{% url 'checkout' %}" class="btn btn-light" role="button"><span aria-hidden="true"></span>Checkout</a>
+                </div>
+            </div>
         {% endfor %}
-        {% endif %}
-    <div class="row justify-content-center">
-        <div class="cart-total">
-            <p><strong>Total: </strong>{{ total }}€</p>
-            <a href="{% url 'checkout' %}" class="btn btn-light" role="button"><span aria-hidden="true"></span>Checkout</a>
-        </div>
-    </div>
+    {% endif %}
 </div>
 {% endblock %}
