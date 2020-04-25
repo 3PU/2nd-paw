@@ -5,15 +5,16 @@
 {% block page_title %}Donate a Product{% endblock %}
 
 {% block page_content %}
-<div class="container form-container">
-    <div class="row justify-content-center">
-        <div class="col-md-6 card">
-            <form class="form-group" method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ product_form | as_bootstrap }}
-                <button type="submit" class="btn btn-light">Donate</button>
-            </form>
+    <div class="container form-container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 card">
+                <form class="form-group" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ product_form | as_bootstrap }}
+                    <button type="submit" class="btn btn-secondary">Donate</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
+    {% include "relative_footer.html" %}
 {% endblock %}

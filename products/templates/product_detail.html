@@ -5,10 +5,9 @@
 {% block page_title %}Products{% endblock %}
 
 {% block page_content %}
-
-<div class="products-container">
-    <div class="row justify-content-center">
-            <div class="col-lg-4">
+    <div class="products-container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 product-image-container">
                 <div class="product-image" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
             </div>
             <div class="col-lg-6 card product-text-container product-detail">
@@ -17,19 +16,19 @@
                 <h6><strong>Suitable for: </strong>{{ product.animal }}s</h6>
                 <h6><strong>Condition: </strong>{{ product.condition }}</h6>
                 <h6><strong>Price: </strong>{{ product.price }} €</h6>
-                {% if user.is_authenticated %}
-                    <form method="POST" action="{% url 'add_item_to_cart' product.id %}">
-                        {% csrf_token %}
-                        <input name="quantity" type="hidden" value="1"class="form-control">
-                        <button class="btn btn-light" type="submit">Add to cart</button>
-                    </form>
-                {% else %}
-                    <div class="input-group">
-                        <a href="{% url 'login' %}" class="btn btn-light">Buy</a>
-                    </div>
-                {% endif %}
+                    {% if user.is_authenticated %}
+                        <form method="POST" action="{% url 'add_item_to_cart' product.id %}">
+                            {% csrf_token %}
+                            <input name="quantity" type="hidden" value="1"class="form-control">
+                            <button class="btn btn-secondary" type="submit">Add to cart</button>
+                        </form>
+                    {% else %}
+                        <div class="input-group">
+                            <a href="{% url 'login' %}" class="btn btn-secondary">Buy</a>
+                        </div>
+                    {% endif %}
             </div>
+        </div>
     </div>
-</div>
-
+{% include "absolute_footer.html" %}
 {% endblock %}

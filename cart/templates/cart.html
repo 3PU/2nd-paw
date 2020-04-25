@@ -26,18 +26,19 @@
                     <form class="form-inline" method="POST" action="{% url 'adjust_cart' item.id %}">
                         {% csrf_token %}
                         <input name="quantity" type="hidden" value="0" class="form-control">
-                        <button type="submit" class="btn btn-light cart-remove-button"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Remove</button>
+                        <button type="submit" class="btn btn-secondary cart-remove-button"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Remove</button>
                     </form>
                 </div>
             </div>
-            <hr>
+            <hr>            
+        {% endfor %}
             <div class="row justify-content-center">
                 <div class="cart-total">
                     <p><strong>Total: </strong>{{ total }}€</p>
-                    <a href="{% url 'checkout' %}" class="btn btn-light" role="button"><span aria-hidden="true"></span>Checkout</a>
+                    <a href="{% url 'checkout' %}" class="btn btn-secondary" role="button"><span aria-hidden="true"></span>Checkout</a>
                 </div>
             </div>
-        {% endfor %}
     {% endif %}
 </div>
+{% include "relative_footer.html" %}
 {% endblock %}

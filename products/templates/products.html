@@ -5,35 +5,34 @@
 {% block page_title %}Products{% endblock %}
 
 {% block page_content %}
-
-<div class="products-container">
-    <div class="row justify-content-center">
-    {% for product in products %}
-        <div class="col-xs-12 col-sm-10 col-lg-5 col-xl-3 card">
-            <div class="d-flex">
-                <div class="product-image" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
-            </div>
-            <div class="product-text-container">
-                <h4>{{ product.title }}</h4>
-                <h6><strong>Suitable for: </strong>{{ product.animal }}s</h6>
-                <h6><strong>Condition: </strong>{{ product.condition }}</h6>
-                <h6><strong>Price: </strong>{{ product.price }} €</h6>
-                <div class="row">
-                    <a href="{% url 'product_detail' product.id %}" class="btn btn-light">Read More</a>
-                    {% if user.is_authenticated %}
-                        <form method="POST" action="{% url 'add_item_to_cart' product.id %}">
-                            {% csrf_token %}
-                                <button class="btn btn-light" type="submit">Add to cart</button>
-                                <input name="quantity" type="hidden" value="1" class="form-control" readonly>
-                        </form>
-                    {% else %}
-                        <a href="{% url 'login' %}" class="btn btn-light">Buy</a>
-                    {% endif %}
-                </div>        
-            </div>
+    <div class="products-container">
+        <div class="row justify-content-center">
+            {% for product in products %}
+                <div class="col-xs-12 col-sm-10 col-lg-5 col-xl-3 card">
+                    <div class="d-flex product-image-container">
+                        <div class="product-image" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
+                    </div>
+                    <div class="product-text-container">
+                        <h4>{{ product.title }}</h4>
+                        <h6><strong>Suitable for: </strong>{{ product.animal }}s</h6>
+                        <h6><strong>Condition: </strong>{{ product.condition }}</h6>
+                        <h6><strong>Price: </strong>{{ product.price }} €</h6>
+                        <div class="row">
+                            <a href="{% url 'product_detail' product.id %}" class="btn btn-secondary">Read More</a>
+                            {% if user.is_authenticated %}
+                                <form method="POST" action="{% url 'add_item_to_cart' product.id %}">
+                                    {% csrf_token %}
+                                        <button class="btn btn-secondary" type="submit">Add to cart</button>
+                                        <input name="quantity" type="hidden" value="1" class="form-control" readonly>
+                                </form>
+                            {% else %}
+                                <a href="{% url 'login' %}" class="btn btn-secondary">Buy</a>
+                            {% endif %}
+                        </div>        
+                    </div>
+                </div>
+            {% endfor %}
         </div>
-    {% endfor %}
     </div>
-</div>
-
+{% include "relative_footer.html" %}
 {% endblock %}

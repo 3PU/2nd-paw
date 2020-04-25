@@ -10,7 +10,7 @@
             <form class="form-group" method="POST">
                 {% csrf_token %}
                 {{ login_form | as_bootstrap }}
-                <button type="submit" class="btn btn-light">Login</button>
+                <button type="submit" class="btn btn-secondary">Login</button>
             </form>
         </div>
     </div>
@@ -21,4 +21,5 @@
             {% endfor %}
         </div>
     {% endif %}
+    {% include "absolute_footer.html" %}
 {% endblock %}
