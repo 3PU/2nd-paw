@@ -52,30 +52,45 @@
                         </div>
                     </li>
                     {% if user.is_authenticated %}
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'create_product' %}">Donate</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'userprofile' %}">My Page</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'view_cart' %}">
-                            <span class="cart-icon"><i class="fas fa-shopping-cart"></i>
-                                {% if product_count > 0 %}
-                                    <label class="badge badge-light">{{ product_count }}</label>
-                                {% endif %}
-                            </span>
-                        </a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{% url 'get_blog_posts' %}">View All Blog Posts</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'create_blog_post' %}">Create Blog Post</a>
+                            </div>
+                        </li>
                     {% else %}
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'registration' %}">Registration</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'login' %}">Login</a>
-                    </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'get_blog_posts' %}">Blog</a>
+                        </li>
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'create_product' %}">Donate</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'userprofile' %}">My Page</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'view_cart' %}">
+                                <span class="cart-icon"><i class="fas fa-shopping-cart"></i>
+                                    {% if product_count > 0 %}
+                                        <label class="badge badge-light">{{ product_count }}</label>
+                                    {% endif %}
+                                </span>
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'registration' %}">Registration</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'login' %}">Login</a>
+                        </li>
                     {% endif %}
                 </ul>
                 <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="get">

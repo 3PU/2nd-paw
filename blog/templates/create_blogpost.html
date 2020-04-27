@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load bootstrap_tags %}
+
+{% block page_title %}Create Blogpost{% endblock %}
+
+{% block page_content %}
+    <div class="container form-container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 card">
+                <form class="form-group" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ blog_form | as_bootstrap }}
+                    <button type="submit" class="btn btn-secondary">Create Blogpost</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% include "relative_footer.html" %}
+{% endblock %}
