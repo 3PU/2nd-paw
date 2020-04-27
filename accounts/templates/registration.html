@@ -10,8 +10,9 @@
             <form class="form-group" method="POST">
                 {% csrf_token %}
                 {{ registration_form | as_bootstrap }}
-                <button type="submit" class="btn btn-light">Register</button>
+                <button type="submit" class="btn btn-secondary">Register</button>
             </form>
+            <p>If you already have an account, you can <a href="{% url 'login' %}">sign in here</a>.</p>
         </div>
     </div>
     {% include "absolute_footer.html" %}
