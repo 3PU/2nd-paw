@@ -7,38 +7,37 @@
 {% block page_title %}Shopping Cart{% endblock %}
 
 {% block page_content %}
-
-<div class="products-container">
-    {% if product_count == 0 %}
-        <div class="col-12 no-cart-items">
-            <h4>There are currently no items in your shopping cart.</h4>
-        </div>
-    {% else %}
-        {% for item in cart_items %}
-            <div class="row justify-content-start">
-                <div class="col-xs-10 col-sm-4 image-container">
-                    <div class="product-image cart-image" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
-                </div>
-                <div class="col-xs-10 col-sm-4 product-text-container">
-                    <h4>{{ item.product.title }}</h4>
-                    <h6><strong>Price: </strong>{{ item.product.price }} €</h6>
-                    <h6><strong>Quantity: </strong>{{ item.quantity }}</h6>
-                    <form class="form-inline" method="POST" action="{% url 'adjust_cart' item.id %}">
-                        {% csrf_token %}
-                        <input name="quantity" type="hidden" value="0" class="form-control">
-                        <button type="submit" class="btn btn-secondary cart-remove-button"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Remove</button>
-                    </form>
-                </div>
+    <div class="products-container">
+        {% if product_count == 0 %}
+            <div class="col-12 no-cart-items">
+                <h4>There are currently no items in your shopping cart.</h4>
             </div>
-            <hr>            
-        {% endfor %}
-            <div class="row justify-content-center">
-                <div class="cart-total">
-                    <p><strong>Total: </strong>{{ total }}€</p>
-                    <a href="{% url 'checkout' %}" class="btn btn-secondary" role="button"><span aria-hidden="true"></span>Checkout</a>
+        {% else %}
+            {% for item in cart_items %}
+                <div class="row justify-content-start">
+                    <div class="col-xs-10 col-sm-4 image-container">
+                        <div class="product-image cart-image" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
+                    </div>
+                    <div class="col-xs-10 col-sm-4 product-text-container">
+                        <h4>{{ item.product.title }}</h4>
+                        <h6><strong>Price: </strong>{{ item.product.price }} €</h6>
+                        <h6><strong>Quantity: </strong>{{ item.quantity }}</h6>
+                        <form class="form-inline" method="POST" action="{% url 'adjust_cart' item.id %}">
+                            {% csrf_token %}
+                            <input name="quantity" type="hidden" value="0" class="form-control">
+                            <button type="submit" class="btn btn-secondary cart-remove-button"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Remove</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-    {% endif %}
-</div>
-{% include "relative_footer.html" %}
+                <hr>            
+            {% endfor %}
+                <div class="row justify-content-center">
+                    <div class="cart-total">
+                        <p><strong>Total: </strong>{{ total }}€</p>
+                        <a href="{% url 'checkout' %}" class="btn btn-secondary" role="button"><span aria-hidden="true"></span>Checkout</a>
+                    </div>
+                </div>
+        {% endif %}
+    </div>
+    {% include "fixed_footer.html" %}
 {% endblock %}

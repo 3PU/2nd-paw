@@ -187,10 +187,10 @@ html, body {
     width: 100%;
 }
 
-.absolute-footer {
-    position: absolute;
-}
-
 .relative-footer {
     position: relative;
+}
+
+.fixed-footer {
+    position: fixed;
 }
