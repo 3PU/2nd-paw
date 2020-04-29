@@ -66,8 +66,13 @@
                         </li>
                     {% endif %}
                     {% if user.is_authenticated %}
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{% url 'create_product' %}">Donate</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Donate</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{% url 'create_product' %}">Donate Product</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'make_donation' %}">Support Us</a>
+                            </div>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="{% url 'userprofile' %}">My Page</a>
@@ -85,6 +90,14 @@
                             </a>
                         </li>
                     {% else %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Donate</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{% url 'login' %}">Donate Product</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'make_donation' %}">Support Us</a>
+                            </div>
+                        </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="{% url 'registration' %}">Registration</a>
                         </li>
