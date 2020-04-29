@@ -23,6 +23,7 @@ def create_blog_post(request):
 
         if blog_form.is_valid():
             blog_post = blog_form.save(commit=False)            
+            """Imports full name from user profile"""
             blog_post.author = request.user
             blog_post.save()
             return redirect("get_blog_posts")
