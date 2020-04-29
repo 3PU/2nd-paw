@@ -22,7 +22,9 @@ def create_blog_post(request):
         blog_form = BlogPostForm(request.POST, request.FILES)
 
         if blog_form.is_valid():
-            blog_form.save()
+            blog_post = blog_form.save(commit=False)            
+            blog_post.author = request.user
+            blog_post.save()
             return redirect("get_blog_posts")
         
         else:
