@@ -6,32 +6,32 @@ from django.contrib.auth.decorators import login_required
 
 def all_products(request):
     """Displays all products"""
-    products = Product.objects.all()
+    products = Product.objects.all().exclude(title="Monetary Donation")
     return render(request, "products.html", {"products": products})
 
 def products_animal_cat(request):
     """Displays cat products"""
-    products = Product.objects.filter(animal="Cat")
+    products = Product.objects.filter(animal="Cat").exclude(title="Monetary Donation")
     return render(request, "products.html", {"products": products})
 
 def products_animal_dog(request):
     """Displays dog products"""
-    products = Product.objects.filter(animal="Dog")
+    products = Product.objects.filter(animal="Dog").exclude(title="Monetary Donation")
     return render(request, "products.html", {"products": products})
 
 def products_category_clothes(request):
     """Displays clothes category"""
-    products = Product.objects.filter(category="Clothes")
+    products = Product.objects.filter(category="Clothes").exclude(title="Monetary Donation")
     return render(request, "products.html", {"products": products})
 
 def products_category_toys(request):
     """Displays toys category"""
-    products = Product.objects.filter(category="Toys")
+    products = Product.objects.filter(category="Toys").exclude(title="Monetary Donation")
     return render(request, "products.html", {"products": products})
 
 def products_category_supplies(request):
     """Displays supply category"""
-    products = Product.objects.filter(category="Supplies")
+    products = Product.objects.filter(category="Supplies").exclude(title="Monetary Donation")
     return render(request, "products.html", {"products": products})
 
 def make_donation(request):
