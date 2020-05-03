@@ -2,15 +2,19 @@
 
 {% load static from staticfiles %}
 
-{% block page_title %}Products{% endblock %}
+{% block page_title %}User Blogposts{% endblock %}
 
 {% block page_content %}
     <div class="products-container">
+        <div class="col text-center">
+            <h2>User Blogposts</h2>
+            <hr>
+        <div>
         <div class="row justify-content-center">
             {% for post in blog_post %}
                 <div class="col-xs-12 col-sm-10 col-lg-5 col-xl-3 card">
-                    <div class="d-flex product-image-container">
-                        <div class="product-image" style="background-image: url('{{ MEDIA_URL }}{{ post.image }}')"></div>
+                    <div>
+                        <img class="product-image rounded" src="{{ MEDIA_URL }}{{ post.image }}">
                     </div>
                     <div class="product-text-container">
                         <h4>{{ post.title }}</h4>                       
@@ -18,7 +22,7 @@
                         <p><strong>Author: </strong>{{ post.author.get_full_name | capfirst }}</p>
                         <p><strong>Pet: </strong>{{ post.animal_name }}</p>
                         <hr>
-                        <p><i>{{ post.published_date }} | {{ post.views }}</i></h6>
+                        <p><i>{{ post.published_date }}</i></h6>
                     </div>
                 </div>
             {% endfor %}
