@@ -3,13 +3,18 @@
 {% block page_title %}{{ profile.username.capitalize }}'s Profile{% endblock %}
 
 {% block page_content %}
-    <div class="row justify-content-center form-container">
-        <div class="col-md-4 card">
+    <div class="container form-container">
+        <div class="text-center">
+            <h2>{{ profile.username | capfirst }}'s Profile:</h2>
+        </div>
+        <hr>
+        <div class>
             <p><strong>User Email:</strong> {{ profile.email }}</p>
             <p><strong>Username:</strong> {{ profile.username }}</p>
             <p><strong>First Name:</strong> {{ profile.first_name }}</p>
             <p><strong>Last Name:</strong> {{ profile.last_name }}</p>
         </div>
+        <a class="btn btn-secondary" href="{% url 'password_reset' %}">Reset Password</a>
     </div>
     {% include "fixed_footer.html" %}
 {% endblock %}
