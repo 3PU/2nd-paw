@@ -9,7 +9,7 @@ html, body {
 
 .btn-secondary {
     background-color: #585454;
-    margin: 2em 0.5em 0.5em 0.5em;
+    margin: 1.5em 0.5em 0.5em 0.5em;
 }
 
 .card {
@@ -21,6 +21,11 @@ html, body {
     -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
+
+.standard-headline {
+    padding-top: 1em;
+}
+
 
 /* ----------------------------------------- NAVBAR */
 
@@ -147,6 +152,12 @@ html, body {
     font-size: 0.8em;
 }
 
+.donate-text-container {
+    margin: auto;
+    width: 80%;
+    padding: 1em 0.5em 0.5em 0.5em;
+}
+
 
 /* ----------------------------------------- SHOPPING CART & CHECKOUT */
 
@@ -196,6 +207,7 @@ html, body {
     background-color: rgba(17, 11, 11, 0.7);
     height: 3em;
     bottom: 0;
+    left: 0;
     width: 100%;
 }
 
