@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 def all_products(request):
     """Displays all products"""
-    products = Product.objects.all().exclude(title="Monetary Donation")
+    products = Product.objects.all().exclude(title__contains="Monetary Donation")
     return render(request, "products.html", {"products": products})
 
 def products_animal_cat(request):
