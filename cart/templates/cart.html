@@ -8,25 +8,30 @@
 
 {% block page_content %}
     <div class="products-container">
+        <div class="col-md-12 text-center checkout-headline">
+            <h3>Cart Items</h3>
+        </div>
         {% if product_count == 0 %}
             <div class="col-12 no-cart-items">
                 <h4>There are currently no items in your shopping cart.</h4>
             </div>
         {% else %}
             {% for item in cart_items %}
-                <div class="row justify-content-start">
-                    <div class="col-xs-10 col-sm-4 image-container">
-                        <div class="product-image cart-image" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
-                    </div>
-                    <div class="col-xs-10 col-sm-4 product-text-container">
-                        <h4>{{ item.product.title }}</h4>
-                        <h6><strong>Price: </strong>{{ item.product.price }} €</h6>
-                        <h6><strong>Quantity: </strong>{{ item.quantity }}</h6>
-                        <form class="form-inline" method="POST" action="{% url 'adjust_cart' item.id %}">
-                            {% csrf_token %}
-                            <input name="quantity" type="hidden" value="0" class="form-control">
-                            <button type="submit" class="btn btn-secondary cart-remove-button"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Remove</button>
-                        </form>
+                <div class="container">
+                    <div class="row justify-content-start">
+                        <div class="col-xs-10 col-sm-4 col-md-3 col-lg-2 image-container">
+                            <img class="product-image" src="{{ MEDIA_URL }}{{ item.product.image }}">
+                        </div>
+                        <div class="col-xs-10 col-sm-4 product-text-container">
+                            <h4>{{ item.product.title }}</h4>
+                            <h6><strong>Price: </strong>{{ item.product.price }} €</h6>
+                            <h6><strong>Quantity: </strong>{{ item.quantity }}</h6>
+                            <form class="form-inline" method="POST" action="{% url 'adjust_cart' item.id %}">
+                                {% csrf_token %}
+                                <input name="quantity" type="hidden" value="0" class="form-control">
+                                <button type="submit" class="btn btn-secondary cart-remove-button"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Remove</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <hr>            
