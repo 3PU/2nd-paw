@@ -14,7 +14,7 @@
             {% for post in blog_post %}
                 <div class="col-xs-12 col-sm-10 col-lg-5 col-xl-3 card">
                     <div>
-                        <img class="product-image rounded" src="{{ MEDIA_URL }}{{ post.image }}">
+                        <a href="{{ MEDIA_URL }}{{ post.image }}" target="_blank"><img class="product-image rounded" src="{{ MEDIA_URL }}{{ post.image }}"></a>
                     </div>
                     <div class="product-text-container">
                         <h4>{{ post.title }}</h4>                       
