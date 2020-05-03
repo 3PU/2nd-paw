@@ -104,6 +104,13 @@ html, body {
     height: 100%;
 }
 
+.product-detail-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    max-width: 30em;
+}
+
 .product-text-container {
     margin: 1em;
 }
@@ -142,12 +149,6 @@ html, body {
 
 
 /* ----------------------------------------- SUPPORT US */
-
-.monetary-donation-image {
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-}
 
 .custom-donation-reminder {
     font-style: italic;
