@@ -7,29 +7,32 @@
 {% block page_content %}
     <div class="products-container">
         <div class="row justify-content-center">
-            {% for donation in donations %}
-                <div class="col-xs-12 col-sm-10 col-lg-6 col-xl-6 card">
-                    <div class="d-flex product-image-container">
-                        <div class="product-image" style="background-image: url('{{ MEDIA_URL }}{{ donation.image }}')"></div>
-                    </div>
-                    <div class="product-text-container">
-                        <h4>{{ donation.title }}</h4>
-                        <p>{{ donation.description }}</p>
-                        <h6><strong>Amount in €: </strong></h6>
-                        <div class="row">
-                            {% if user.is_authenticated %}
-                                <form method="POST" action="{% url 'add_item_to_cart' donation.id %}">
-                                    {% csrf_token %}
-                                        <input name="quantity" type="number" min="0" max="1000000" class="form-control" placeholder="Quantity" value="10">
-                                        <button class="btn btn-secondary" type="submit">Add to cart</button>
-                                </form>
-                            {% else %}
-                                <a href="{% url 'login' %}" class="btn btn-secondary">Buy</a>
-                            {% endif %}
-                        </div>        
-                    </div>
+            <div class="col-xs-12 col-sm-10 col-lg-6 col-xl-6 card">
+                <div>
+                    <img class="monetary-donation-image" src="{% static 'img/cat_dog_vet.jpg' %}"></img>
                 </div>
-            {% endfor %}
+                <div class="product-text-container">
+                <h4>Monetary Donation</h4>
+                <p>Your generosity saves the lives of at-risk cats and dogs in the Stockholm area.
+                   Every donation to 2nd Paw goes to work immediately for cats and dogs.
+                   Gifts support everything from foster care and adoption services to spay/neuter
+                   surgeries and lifesaving medical care, everything it takes to give cats and dogs
+                   their best chance to have healthy lives and find loving homes. As a nonprofit
+                   animal charity, we rely on cat and dog lovers like you to make this lifesaving
+                   work possible. And just like you, we love helping cats! Thank you!</p>
+                
+                {% for donation in donations %}
+                    <div class="d-inline-block">
+                        <form method="POST" action="{% url 'add_item_to_cart' donation.id %}">
+                            {% csrf_token %}
+                            <input name="quantity" type="hidden" min="10" max="1" class="form-control" placeholder="Quantity" value="1" readonly>
+                            <button class="btn btn-secondary" type="submit">Donate {{ donation.price }}€</button>
+                        </form>
+                    </div>
+                {% endfor %}
+                <p class="custom-donation-reminder">*If you would like to donate a different amount, you can combine multiple donation alternatives by adding them to the shopping cart.</p>
+                </div>
+            </div>
         </div>
     </div>
     {% include "fixed_footer.html" %}

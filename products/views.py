@@ -36,7 +36,7 @@ def products_category_supplies(request):
 
 def make_donation(request):
     """Displays all products"""
-    donations = Product.objects.filter(title="Monetary Donation")
+    donations = Product.objects.filter(title__contains="Monetary")
     return render(request, "donation.html", {"donations": donations})
 
 @login_required

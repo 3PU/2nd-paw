@@ -140,6 +140,21 @@ html, body {
     }
 }
 
+
+/* ----------------------------------------- SUPPORT US */
+
+.monetary-donation-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.custom-donation-reminder {
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+
 /* ----------------------------------------- SHOPPING CART & CHECKOUT */
 
 .cart-total {
