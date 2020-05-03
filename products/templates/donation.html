@@ -6,10 +6,14 @@
 
 {% block page_content %}
     <div class="products-container">
+        <div class="col text-center">
+            <h2>Support Our Work</h2>
+            <hr>
+        <div>
         <div class="row justify-content-center">
             <div class="col-xs-12 col-sm-8 col-lg-6 col-xl-6 card">
                 <div>
-                    <img class="product-image" src="{% static 'img/cat_dog_vet.jpg' %}"></img>
+                    <img class="product-image rounded" src="{% static 'img/veterinarian.jpg' %}"></img>
                 </div>
                 <div class="product-text-container">
                 <h4>Monetary Donation</h4>
@@ -19,7 +23,9 @@
                    surgeries and lifesaving medical care, everything it takes to give cats and dogs
                    their best chance to have healthy lives and find loving homes.</p>
                 <p>As a nonprofitanimal charity, we rely on cat and dog lovers like you to make this lifesaving
-                   work possible. And just like you, we love helping cats! Thank you!</p>
+                   work possible.</p>
+                <p>And just like you, we love helping cats & dogs!</p>
+                <p><strong>Thank you!</strong></p>
                 
                 {% for donation in donations %}
                     <div class="d-inline-block">
