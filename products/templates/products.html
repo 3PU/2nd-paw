@@ -8,9 +8,9 @@
     <div class="products-container">
         <div class="row justify-content-center">
             {% for product in products %}
-                <div class="col-xs-12 col-sm-10 col-lg-5 col-xl-3 card">
-                    <div class="d-flex product-image-container">
-                        <div class="product-image" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
+                <div class="col-xs-12 col-sm-4 col-lg-3 card">                    
+                    <div>
+                        <img class="product-image" src="{{ MEDIA_URL }}{{ product.image }}">
                     </div>
                     <div class="product-text-container">
                         <h4>{{ product.title }}</h4>
