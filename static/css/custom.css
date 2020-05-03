@@ -167,12 +167,21 @@ html, body {
     padding: 0.3em;
 }
 
+.checkout-headline {
+    padding: 2em;
+}
+
 .checkout-products-table {
     text-align: center;
 }
 
 .checkout-products-table .table {
     border: 1px solid #585454;
+}
+
+#submit_payment_btn {
+    font-size: 1.3em;
+    margin: 2em;
 }
 
 /* ----------------------------------------- PASSWORD RESET PAGES */
