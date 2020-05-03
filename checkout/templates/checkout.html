@@ -17,20 +17,21 @@
 
 {% block page_content %}
     <div class="products-container checkout-products-table">
-        <div class="col-md-12 text-center">
-            <h5>Order Details</h5>
+        <div class="col-md-12 text-center checkout-headline">
+            <h3>Order Details</h3>
+            <hr>
         </div>
         <div class="row justify-content-center">
             <table class="table col-8 table-borderless table-hover">
                 <thead>
-                    <tr class="table-active">
+                    <tr class="table-active text-left">
                         <th scope="col">Product</th>
                         <th scope="col">Price</th>
                         <th scope="col">Quantity</th>
                     </tr>
                 </thead>
                 {% for item in cart_items %}
-                    <tr>
+                    <tr class="text-left">
                         <td>{{ item.product.title }}</td>
                         <td>{{ item.product.price }}€</td>
                         <td>{{ item.quantity }}</td>
@@ -48,8 +49,9 @@
                 <div class="alert-message block-message error" id="stripe-error-message"></div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-md-12 text-center">
-                    <h5>Payment Details</h5>
+                <div class="col-md-12 text-center checkout-headline">
+                    <h3>Payment Details</h3>
+                    <hr>
                 </div>
                 <div class="col-xs-10 col-sm-5 col-lg-4">
                     {{ order_form | as_bootstrap }}
@@ -60,7 +62,7 @@
                 </div>
                 <div class="col-md-12 text-center">
                     {% csrf_token %}
-                    <input class=" btn btn-secondary text-center" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
+                    <input class="btn btn-secondary text-center" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
                 </div>
             </div>
         </form>
