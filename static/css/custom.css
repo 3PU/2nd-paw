@@ -33,6 +33,10 @@ html, body {
     background-color: rgba(17, 11, 11, 0.7);
 }
 
+.navbar-brand .fa-paw {
+    padding: 0 0.5em;
+}
+
 .cart-icon {
     font-size: 1.2em;
     padding-right: 1em;
