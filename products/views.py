@@ -11,27 +11,27 @@ def all_products(request):
 
 def products_animal_cat(request):
     """Displays cat products"""
-    products = Product.objects.filter(animal="Cat").exclude(title="Monetary Donation")
+    products = Product.objects.filter(animal="Cat").exclude(title__contains="Monetary Donation")
     return render(request, "products.html", {"products": products})
 
 def products_animal_dog(request):
     """Displays dog products"""
-    products = Product.objects.filter(animal="Dog").exclude(title="Monetary Donation")
+    products = Product.objects.filter(animal="Dog").exclude(title__contains="Monetary Donation")
     return render(request, "products.html", {"products": products})
 
 def products_category_clothes(request):
     """Displays clothes category"""
-    products = Product.objects.filter(category="Clothes").exclude(title="Monetary Donation")
+    products = Product.objects.filter(category="Clothes").exclude(title__contains="Monetary Donation")
     return render(request, "products.html", {"products": products})
 
 def products_category_toys(request):
     """Displays toys category"""
-    products = Product.objects.filter(category="Toys").exclude(title="Monetary Donation")
+    products = Product.objects.filter(category="Toys").exclude(title__contains="Monetary Donation")
     return render(request, "products.html", {"products": products})
 
 def products_category_supplies(request):
     """Displays supply category"""
-    products = Product.objects.filter(category="Supplies").exclude(title="Monetary Donation")
+    products = Product.objects.filter(category="Supplies").exclude(title__contains="Monetary Donation")
     return render(request, "products.html", {"products": products})
 
 def make_donation(request):
