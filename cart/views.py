@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse
+import sweetify
 
 def view_cart(request):
     """A view that renders the cart contents page"""
@@ -16,6 +17,7 @@ def add_item_to_cart(request, id):
         cart[id] = cart.get(id, quantity) 
 
     request.session['cart'] = cart
+    sweetify.success(request, "Your selection has been added to your shopping cart!", icon="success")
     return redirect(reverse('view_cart'))
 
 def adjust_cart(request, id):
@@ -30,4 +32,5 @@ def adjust_cart(request, id):
         cart.pop(id)
 
     request.session['cart'] = cart
+    sweetify.success(request, "Successfully removed from your shopping cart!", icon="success")
     return redirect(reverse('view_cart'))

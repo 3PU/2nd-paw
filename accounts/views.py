@@ -3,6 +3,7 @@ from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from accounts.forms import UserLoginForm, UserRegistrationForm
+import sweetify
 
 def registration(request):
     """Return the registration.html file"""
@@ -20,11 +21,11 @@ def registration(request):
 
             if user:
                 auth.login(user=user, request=request)
-                messages.success(request, "You have successfully registered!")
+                sweetify.success(request, "You have successfully registered!", icon="success")
                 return redirect(reverse('index'))
 
             else:
-                messages.error(request, "We're truly sorry. We are unable to register your account at this time.")
+                sweetify.error(request, "We're truly sorry. We are unable to register your account at this time.", icon="error")
     
     else:
         registration_form = UserRegistrationForm()
@@ -47,7 +48,7 @@ def login(request):
             if user:
                 auth.login(user=user, request=request)
 
-                messages.success(request, "You have successfully logged in!")
+                sweetify.success(request, "You have successfully logged in!", icon="success")
                 return redirect(reverse('index'))
 
             else:
@@ -67,5 +68,5 @@ def userprofile(request):
 def logout(request):
     """Logs out the user"""
     auth.logout(request)
-    messages.success(request, "You have successfully been logged out!")
+    sweetify.success(request, "You have successfully been logged out!", icon="success")
     return redirect(reverse('index'))

@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 from .models import BlogPost
 from .forms import BlogPostForm
+import sweetify
 
 def get_blog_posts(request):
     """
@@ -26,6 +27,7 @@ def create_blog_post(request):
             """Imports full name from user profile"""
             blog_post.author = request.user
             blog_post.save()
+            sweetify.success(request, "Thank you for your contribution. Your blog post has been successfully posted!", icon="success")
             return redirect("get_blog_posts")
         
         else:

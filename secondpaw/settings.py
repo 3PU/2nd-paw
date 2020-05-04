@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'search',
     'checkout',
     'blog',
+    'sweetify',
 ]
 
 MIDDLEWARE = [
@@ -146,3 +147,7 @@ STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+# Sweetify Alerts
+
+SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'

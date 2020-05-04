@@ -3,6 +3,7 @@ from .models import Product
 from django.contrib import messages
 from .forms import CreateProductForm
 from django.contrib.auth.decorators import login_required
+import sweetify
 
 def all_products(request):
     """Displays all products"""
@@ -47,6 +48,7 @@ def create_product(request, pk=None):
 
         if product_form.is_valid():
             product_form.save()
+            sweetify.success(request, "Thank you for your contribution. Your product has been added to the shop!", icon="success")
             return redirect("all_products")
         
         else:
