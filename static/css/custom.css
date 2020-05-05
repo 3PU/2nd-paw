@@ -111,6 +111,10 @@ p {
     box-shadow: 6px 6px 18px rgba(0, 0, 0, 0.3);
 }
 
+.top-about-image {
+    padding: 4.5em 3em 3em 3em;
+}
+
 /* ----------------------------------------- FORMS */
 
 .form-container {
