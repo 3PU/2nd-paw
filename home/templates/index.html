@@ -13,25 +13,30 @@
     </div>
 </header>
 
-<section id="first-section">
+<section id="about">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 order-lg-2">
-                <div class="p-5">
+                <div class="top-about-image">
                     <img class="img-fluid rounded-circle" src="{% static 'img/dog_with_toy.png' %}" alt="">
                 </div>
             </div>
             <div class="col-lg-6 order-lg-1">
                 <div class="p-5">
-                    <h2 class="display-4">For those about to rock...</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+                    <h3 class="display-4">Who are we?</h3>
+                    <hr>
+                    <p>2ND PAWS is a non-profit organization, closely working together with all major cat & dog
+                    shelters in the Stockholm area. We are providing pet owners with an online meeting portal to
+                    donate/exchange pet clothes, toys and supplies that they no longer need/use. All profits
+                    generated on our website go directly to the cat and dog shelters in Stockholm, supporting
+                    their fantastic work.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-  <section>
+<section>
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6">
@@ -41,15 +46,23 @@
         </div>
         <div class="col-lg-6">
           <div class="p-5">
-            <h2 class="display-4">We salute you!</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+            <h3 class="display-4">Have you ever...</h3>
+            <hr>
+            <p>...experienced this? You buy a new toy, full of excitement to see your pet play with it.
+            But once you present it, you're left with an empty look on your pets face only to see your
+            furry friend wanders off and start playing with some random thing in your house? Now you're
+            sitting there with a toy that you have no use for as your pet was completely uninterested?</p>
+            <p>Rest assured, this is a very common experience for many pet owners and we all have faced
+            this akward situation many times. At 2nd Paws we offer you the opportunity to donate such
+            a product so it can be of use to other pet owners and pets whilst having a positive impact
+            by supporting Stockholms cat and dog shelters in their amazing job.</p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+</section>
 
-  <section>
+<section>
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 order-lg-2">
@@ -59,19 +72,21 @@
         </div>
         <div class="col-lg-6 order-lg-1">
           <div class="p-5">
-            <h2 class="display-4">Let there be rock!</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+            <h3 class="display-4">Positive Impact</h3>
+            <hr>
+            <p>Donating products via our service instead of throwing them away...</p>
+            <ul class="fa-ul">
+            <li><span class="fa-li"><i class="fas fa-paw" aria-hidden=true"></i></span>Protects the environment!</li>
+            <li><span class="fa-li"><i class="fas fa-paw" aria-hidden=true"></i></span>Helps to fund and support the work of multiple cat/dog shelters around Stockholm!</li>
+            <li><span class="fa-li"><i class="fas fa-paw" aria-hidden=true"></i></span>Gives the product a second life and brings happiness to other pet owners and pets!</li>
+            </ul>
+            <p>Simply put, a easy second hand service for animal products, hence our slogan<strong>
+             "From paw to paw"</strong>.</p>
+             <p>For more information about our service and how it works, please visit the <a href="#">FAQ page</a>.</p>
           </div>
         </div>
       </div>
     </div>
-  </section>
-    {% if messages %}
-        <div>
-            {% for message in messages %}
-                {{ message}}
-            {% endfor %}
-        </div>
-    {% endif %}
-    {% include "relative_footer.html" %}
+</section>
+{% include "relative_footer.html" %}
 {% endblock %}
