@@ -115,6 +115,37 @@ p {
     padding: 4.5em 3em 3em 3em;
 }
 
+/* ----------------------------------------- FAQ */
+
+#question-icon {
+    padding: 0.5em;
+    font-size: 1.3em;
+    color: #110b0bb3;
+}
+
+.faq-accordion {
+    padding: 0;
+    margin: 0;
+}
+
+.card-header {
+    background-color: #fff;
+
+}
+
+.accordion-button {
+    font-size: 1.1em;
+    color: #110b0bb3;
+}
+
+.btn-link.focus,
+.btn-link:focus,
+.btn-link:hover,
+.btn:hover {
+    text-decoration: none;
+    color: #110b0bb3; 
+}
+
 /* ----------------------------------------- FORMS */
 
 .form-container {
