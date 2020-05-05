@@ -222,15 +222,21 @@ p {
 
 /* ----------------------------------------- SUPPORT US */
 
-.custom-donation-reminder {
-    font-style: italic;
-    font-size: 0.8em;
+#donation-icon {
+    padding: 0.5em;
+    font-size: 1em;
+    color: #fff;
 }
 
 .donate-text-container {
     margin: auto;
     width: 80%;
     padding: 1em 0.5em 0.5em 0.5em;
+}
+
+.custom-donation-reminder {
+    font-style: italic;
+    font-size: 0.8em;
 }
 
 
