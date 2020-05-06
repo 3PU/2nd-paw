@@ -136,6 +136,12 @@ p {
 .accordion-button {
     font-size: 1.1em;
     color: #110b0bb3;
+    font-weight: 500;
+}
+
+.accordion-card {
+    background-color: #110b0bb3;
+    color: #fff;
 }
 
 .btn-link.focus,
