@@ -123,6 +123,10 @@ p {
     color: #110b0bb3;
 }
 
+.accordion-container {
+    padding: 0;
+}
+
 .faq-accordion {
     padding: 0;
     margin: 0;
@@ -131,6 +135,10 @@ p {
 .card-header {
     background-color: #fff;
 
+}
+
+.card-body {
+    padding: 1.25em 0 0 0;
 }
 
 .accordion-button {
@@ -142,6 +150,7 @@ p {
 .accordion-card {
     background-color: #110b0bb3;
     color: #fff;
+    margin: 0;
 }
 
 .btn-link.focus,
