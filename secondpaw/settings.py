@@ -29,8 +29,8 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['codei-2nd-paws.herokuapp.com']
-
+ALLOWED_HOSTS = ['localhost',
+                'codei-2nd-paws.herokuapp.com']
 
 # Application definition
 
@@ -88,6 +88,13 @@ WSGI_APPLICATION = 'secondpaw.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
+#}
 
 DATABASES = {'default': dj_database_url.parse("postgres://guxxqcsggayzmf:39aec154a19807381b7af19f805f3646a52877bce7e6aa5dbb73fb8f6ea4c729@ec2-54-217-204-34.eu-west-1.compute.amazonaws.com:5432/db2o7vfseu3hn9")
 }
