@@ -1,1 +1,1 @@
-web: gunicorn codei-2nd-paws.wsgi:application
+web: gunicorn secondpaw.wsgi:application
