@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import dj_database_url
 
 if os.path.exists('env.py'):
     import env
@@ -94,6 +95,8 @@ DATABASES = {
     }
 }
 
+DATABASES = {'default': dj_database_url.parse("postgres://guxxqcsggayzmf:39aec154a19807381b7af19f805f3646a52877bce7e6aa5dbb73fb8f6ea4c729@ec2-54-217-204-34.eu-west-1.compute.amazonaws.com:5432/db2o7vfseu3hn9")
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
