@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load bootstrap_tags %}
+
+{% block page_title %}Contact Us{% endblock %}
+
+{% block page_content %}
+    <div class="container form-container">
+        <div class="text-center">
+            <h2>Contact Us</h2>
+        </div>
+        <div class="text-center donate-text-container">
+            <p>Please fill out the form below to send a message to us.</p>
+            <p>Generally, we reply within 24 hours Monday through Friday.</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6 card">
+                <form class="form-group" method="POST">
+                    {% csrf_token %}
+                    {{ form | as_bootstrap }}
+                    <button type="submit" class="btn btn-secondary">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% include "fixed_footer.html" %}
+{% endblock %}
