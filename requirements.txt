@@ -7,3 +7,4 @@ psycopg2==2.8.5
 pytz==2019.3
 stripe==2.45.0
 sweetify==2.0.0
+whitenoise==5.0.1
