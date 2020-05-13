@@ -41,7 +41,7 @@ def make_donation(request):
     return render(request, "donation.html", {"donations": donations})
 
 @login_required
-def create_product(request, pk=None):
+def donate_product(request, pk=None):
     """Allows user to donate/create a product"""
     if request.method == "POST":
         product_form = CreateProductForm(request.POST, request.FILES)
