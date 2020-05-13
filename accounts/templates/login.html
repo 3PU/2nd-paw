@@ -10,9 +10,10 @@
             <form class="form-group" method="POST">
                 {% csrf_token %}
                 {{ login_form | as_bootstrap }}
-                <p>Forgot your password? You can reset it <a href="{% url 'password_reset' %}">here</a>.</p>
                 <button type="submit" class="btn btn-secondary">Login</button>
             </form>
+            <p>Not a member yet? To sign up for a FREE account <a href="{% url 'registration' %}">click here</a>.</p>
+            <p>Forgot your password? <a href="{% url 'password_reset' %}">Click here</a>.</p>
         </div>
     </div>
     {% include "fixed_footer.html" %}
