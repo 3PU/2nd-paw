@@ -52,7 +52,7 @@ def donate_product(request, pk=None):
             return redirect("all_products")
         
         else:
-            sweetify.error(request, "We could not submit your donation. Ensure you entered a correct price between 2€-100€.", icon="error")
+            sweetify.error(request, "We could not submit your donation. Make sure you enter a correct price between 2€-100€.", icon="error")
             product_form = CreateProductForm()
     
     else:
