@@ -105,6 +105,13 @@ p {
     color: #c2c3c3;
 }
 
+@media only screen and (max-width 768px) {
+    .banner {
+        background: url(../../static/img/index_paws_small.jpg);
+        background-attachment: scroll;
+    }
+}
+
 /* ----------------------------------------- INDEX */
 
 .rounded-circle {
