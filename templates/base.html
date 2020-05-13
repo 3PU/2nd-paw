@@ -79,7 +79,16 @@
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-                        </li>                        
+                        </li>
+                        {% if product_count > 0 %}
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{% url 'view_cart' %}">
+                                    <span class="cart-icon"><i class="fas fa-shopping-cart"></i>
+                                        <label class="badge badge-light">{{ product_count }}</label>
+                                    </span>
+                                </a>
+                            </li>
+                        {% endif %}                     
                     {% else %}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Donate</a>
