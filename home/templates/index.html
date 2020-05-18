@@ -6,10 +6,13 @@
 
 {% block page_content %}
 <header>
-    <div class="banner">
-        <div class="banner-chevron-container">
-            <span class="chevron-container"><i class="fas fa-chevron-down"></i><span>
-        </div>
+    <div class="banner"></div>
+    <div class="row banner-chevron-container justify-content-center">
+        <a href="{% url 'index' %}#about" >
+            <div class="col-12 chevron-container">
+                <i class="fas fa-chevron-down"></i>
+            <div>
+        </a>
     </div>
 </header>
 

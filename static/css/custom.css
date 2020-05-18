@@ -94,15 +94,25 @@ p {
     height: 100vh;
 }
 
-.banner-chevron-container {
-    text-align: center;
+.banner-chevron-container a:link,
+.banner-chevron-container a:visited,
+.banner-chevron-container a:hover,
+.banner-chevron-container a:active {
+    text-decoration: none;
+    color: #c2c3c3;
+}
+
+.banner-chevron-container a:hover {
+    color: #a2a2a2;
 }
 
 .chevron-container {
     position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
     font-size: 3em;
-    bottom: 1em;
+    bottom: 0;
     color: #c2c3c3;
+    text-align: center;
 }
 
 @media only screen and (max-width 768px) {
