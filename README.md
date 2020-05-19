@@ -106,7 +106,7 @@ The wireframe mockups below have been created with [MockFlow](https://mockflow.c
 
 ## UI
 
-### Colors, Fonts & Layout
+### Colors
 
 The following colors are used throughout the project:
 
@@ -117,7 +117,27 @@ The following colors are used throughout the project:
 - #585454 (Buttons & borders)
 - #110b0bb3 (Accordion)
 
-In terms of fonts, initially I thought about using two fonts, but after implementing Google Fonts 'Ubuntu' I realized it looked very good by itself across the site.
+### Fonts
+
+Only sans serif fonts were used throughout the project.
+
+Initially I thought about using two fonts, but after implementing Google Fonts 'Ubuntu' I realized it looked very good by itself across the site.
+
+Font family used throughout the project: 'Google Fonts Ubuntu'
+Font weight: '400', '500' & '700'
+
+### Icons
+
+Only fontawesome icons have been used on the page.
+
+Icons used throughout the project:
+
+- Navbar: 'fas fa-paw' & 'fas fa-shopping-cart'
+- About: 'fas fa-paw'
+- FAQ: 'far far fa-comment-dots' & 'fas fa-paw'
+- Support Us: 'fas fa-hand-holding-usd'
+
+### Layout
 
 The idex page is kept very clean, using only a background image that fills up the entire first page. I decided to place a chevron icon at the bottom
 of the page to naturally provoke users to scroll down where they can find the 'About' page. If users decide to browse to the about section via
@@ -227,3 +247,33 @@ yield any results a text is displayed telling the user that no products have bee
 ### Shopping cart
 
 The shopping cart icon is only displayed if any products have been added to the shopping cart.
+
+### Checkout
+
+The checkout page is only available via the checkout button the shopping cart page.
+
+## User Stories
+
+- As a user, I want to learn more about the company behind the website.
+- As a user, I want to be able to find answers to my questions.
+- As a user, I want to be able to contact the company behind the website.
+- As a user, I want to be able to register and sign up for a free account.
+- As a user, I want to be able to login, logout and reset my password if need be.
+- As a user, I want to be able to browse through available donated products.
+- As a user, I want to be able to search the database of available products.
+- As a user, I want to be able to donate products.
+- As a user, I want to be able to make a monetary donation.
+- As a user, I want to be able to browse through all user blogposts.
+- As a user, I want to be able to create a blogpost and share my story with the visitors of the website.
+
+## Database
+
+Both the development database (SQLite3) and production database (PostgresSQL) store the following tables and values:
+
+Both databases contain and store the following tables and values:
+
+| Table | Value 1 | Value 2 | Value 3 | Value 4 | Value 5 | Value 6 | Value 7 |
+|-------|---------|---------|---------|---------|---------|---------|---------|
+| auth_user | username | email | first_name | last_name | n/a | n/a | n/a |
+| blogpost | title | author | animal_name | content | published_date | image | n/a |
+| product | title | category | animal | condition | description | price | image |
