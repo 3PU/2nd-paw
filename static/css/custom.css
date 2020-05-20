@@ -112,6 +112,7 @@ p {
         background-position: left top;
         background-attachment: scroll;
         height: 100vh;
+    }
 }
 
 .banner-chevron-container a:link,
