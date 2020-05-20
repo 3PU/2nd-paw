@@ -132,10 +132,10 @@ Only fontawesome icons have been used on the page.
 
 Icons used throughout the project:
 
-- Navbar: 'fas fa-paw' & 'fas fa-shopping-cart'
-- About: 'fas fa-paw'
-- FAQ: 'far far fa-comment-dots' & 'fas fa-paw'
-- Support Us: 'fas fa-hand-holding-usd'
+- Navbar: `fas fa-paw` & `fas fa-shopping-cart`
+- About: `fas fa-paw`
+- FAQ: `far far fa-comment-dots` & `fas fa-paw`
+- Support Us: `fas fa-hand-holding-usd`
 
 ### Layout
 
@@ -159,6 +159,25 @@ or buy pet products at a discounted price, and by that financially support the l
 
 Visitors can also choose to make monetary donations or create a blogpost showing how their pet liked a product purchased
 through the website.
+
+## User Stories
+
+- As a user, I want to learn more about the company behind the website.
+- As a user, I want to be able to find/get answers to my questions.
+- As a user, I want to be able to contact the company behind the website.
+- As a user, I want to be able to register and sign up for a free account.
+- As a user, I want to be able to login, logout and reset my password if need be.
+- As a user, I want to be able to browse through the database of available donated products.
+- As a user, I want to be able to search the database of available donated products.
+- As a user, I want to be able to buy donated products using a credit card.
+- As a user, I want to be able to donate products.
+- As a user, I want to be able to make a monetary donation.
+- As a user, I want to be able to browse through all user blogposts.
+- As a user, I want to be able to create a blogpost and share my story with the visitors of the website.
+
+<br/>
+
+## Pages & Functionality
 
 ### About
 
@@ -252,28 +271,182 @@ The shopping cart icon is only displayed if any products have been added to the 
 
 The checkout page is only available via the checkout button the shopping cart page.
 
-## User Stories
-
-- As a user, I want to learn more about the company behind the website.
-- As a user, I want to be able to find answers to my questions.
-- As a user, I want to be able to contact the company behind the website.
-- As a user, I want to be able to register and sign up for a free account.
-- As a user, I want to be able to login, logout and reset my password if need be.
-- As a user, I want to be able to browse through available donated products.
-- As a user, I want to be able to search the database of available products.
-- As a user, I want to be able to donate products.
-- As a user, I want to be able to make a monetary donation.
-- As a user, I want to be able to browse through all user blogposts.
-- As a user, I want to be able to create a blogpost and share my story with the visitors of the website.
+<br/>
 
 ## Database
 
-Both the development database (SQLite3) and production database (PostgresSQL) store the following tables and values:
+Development Database: SQLite3
+Production Database: PostgresSQL
+
+The following tables and values are stored in both the development and production database:
 
 Both databases contain and store the following tables and values:
 
 | Table | Value 1 | Value 2 | Value 3 | Value 4 | Value 5 | Value 6 | Value 7 |
 |-------|---------|---------|---------|---------|---------|---------|---------|
-| auth_user | username | email | first_name | last_name | n/a | n/a | n/a |
-| blogpost | title | author | animal_name | content | published_date | image | n/a |
+| auth_user | username | email | first_name | last_name | `n/a` | `n/a` | `n/a` |
+| blogpost | title | author | animal_name | content | published_date | image | `n/a` |
 | product | title | category | animal | condition | description | price | image |
+
+## Accessibility
+
+To increase accessibility of the website, ALT attributes have been added to all static images and hidden screenreader
+utilities (sr-only) to the shopping cart icon.
+
+<br/>
+
+## Challenges
+
+My overall experience when creating this application was smooth and straight forward once I had a good understanding of
+all the concepts.
+
+Two of the biggest challenges I encountered were related to the design and even though they were simplistic in nature,
+they proved difficult to solve.
+
+The first challenge was the footer which I wanted to stick to the bottom of the page at all times. Normally, this
+is easy to solve, but since I used a fullscreen and fixed background image on the index page, fixating the footer
+to the bottom of the page using `position:fixed` and `bottom:0` resulted in the footer sticking to the bottom of
+the index background div instead of the bottom of the entire page height. Using `position:relative` made the footer
+work on the index page, but instead left the footer floating in the middle of the page on all other pages, regardless
+of the bottom-margin I uses. The way I solved this problem was to create two different footers, one relative and one
+fixed. The relative footer is used on the index page and the relative footer is used on all other pages.
+
+The second challenge was the actual background image on the index page. For some reason, when testing the website on
+phones specifically, none of the phones used did scale the image, leaving it in its original size. To solve this,
+I created a smaller version that replaces the larger image on screen sizes below 768px.
+
+<br/>
+
+## Features
+
+### Feature Overview
+
+- Users can learn more about the company behind the website.
+- Users can find answers to the most commonly asked questions.
+- Users can reach out and contact the company behind the website.
+- Users can register and sign up for a free account.
+- Users can login, logout and reset their password if need be.
+- Users can browse through the database of available donated products.
+- Users can search the database of available donated products.
+- Users can buy donated products using a credit card.
+- Users can donate products.
+- Users can make monetary donations.
+- Users can browse through all user blogposts.
+- Users can create a blogpost and share their story with the visitors of the website.
+
+### Feature 1 - Learn more about the company
+
+**User story: "As a user, I want to learn more about the company behind the website."**
+
+Users can learn more about the company by scrolling down to the about section on the
+index page or by clicking on the 'About' -> 'About us' link in the navbar.
+
+### Feature 2 - Find answers to the most commonly asked questions
+
+**User story: "As a user, I want to be able to easily find/get answers to my questions."**
+
+Users can find answers to the most commonly asked questions on the FAQ page by clicking
+on the 'About' -> 'FAQ' link the navbar. If the users question is not answered via the
+FAQ page, users can reach out to the company directly via the contact page by clicking
+on the 'About' -> 'Contact us' link in the navbar and ask their question using the
+contact form.
+
+### Feature 3 - Contact the company
+
+**User story: "As a user, I want to be able to contact the company behind the website."**
+
+Users can reach out to the company directly via the contact page by clicking
+on the 'About' -> 'Contact us' link in the navbar and ask their question using the
+contact form.
+
+### Feature 4 - Register and sign up for free account
+
+**User story: "As a user, I want to be able to register and sign up for a free account."**
+
+Users can register for a free account on the registration page by clicking on 'Register'
+in the navbar and fill out the required registration form. The registration page can
+also be reached via a link on the login page below the login button.
+
+### Feature 5 - Login, Logout & Reset Password
+
+**User story: "As a user, I want to be able to login, logout and reset my password if need be."**
+
+Users can login by browsing to the login page by clicking on the 'Login' link in the navbar,
+and click on login after entering their login credentials. Users can logout by clicking on
+the 'Logout' link in the navbar. Users can reset their password by clicking on the 'forgot
+password' link on the login page.
+
+NOTE: The login link in the navbar is only visible for non-authenticated users whilst the logout
+link in the navbar only is visible for authenticated users.
+
+### Feature 6 - View products in database
+
+**User story: "As a user, I want to be able to browse through the database of available donated products."**
+
+Users can browse through all products by clicking on the 'Browse shop' link in the navbar,
+followed by choosing a category. Each category links to the same template but filters out
+the applicable choice of products and only displays the ones matching the users choice.
+Each product in the product summary is displayed with an image, a title, a animal category,
+the condition of the product and the price. Users can click on the 'Read more' button which
+renders the product detail page. The product detail page displays the same information of the
+product + a more detailed description of the product.
+
+### Feature 7 - Search for products in database
+
+**User story: "As a user, I want to be able to search the database of available donated products."**
+
+Users can search through the product database by entering a search word into the search bar in
+the navbar and clicking on the 'search' button. The search renders the products.html page and
+only displays the products that match the search criterias based on the product title.
+
+### Feature 8 - Buy products
+
+**User story: "As a user, I want to be able to buy donated products using a credit card."**
+
+Users can buy any product available in the database by clickion on the 'Buy' button on the
+product overview or product detail page which adds the chosen product to the shopping cart.
+Once the product has been added to the shopping cart, the user can proceed to the checkout
+page by clicking on the 'Checkout' button on the shopping cart page. This takes the user
+to the checkout page and to finalize the purchase, the user needs to complete the checkout
+form and click on 'Submit Payment'.
+
+### Feature 9 - Donate products
+
+**User story: "As a user, I want to be able to donate products."**
+
+Users can donate products via the donate products page which they can reach by clicking on
+the 'Donate' -> 'Donate Product' link in the navbar. To finalize the donatin process on 
+the donate product page, the user needs to fill out the applicable form and click the
+'Donate' button to submit the necessary information and add the product to the database.
+
+### Feature 10 - Make a monetary donation
+
+**User story: "As a user, I want to be able to make a monetary donation."**
+
+Users can make monetary donations on the 'Support Us' page that can be reached by clicking
+on the 'Donate' -> 'Support Us' link in the navbar. Users can choose between 3 fixed amounts
+to donate, 10€, 50€ & 100€. Clicking on the applicable amount button adds the donation to
+the shopping cart. Multiple amounts can be stacked on top of each other if a user wants to
+donate a specific amount or a higher amount than the available fixed amounts. Once the monetary
+donation has been added to the shopping cart, the user can proceed to the checkout page by
+clicking on the 'Checkout' button on the shopping cart page. This takes the user to the
+checkout page and to finalize the purchase, the user needs to complete the checkout form
+and click on 'Submit Payment'.
+
+### Feature 11 - View user blogposts in database
+
+**User story: "As a user, I want to be able to browse through all user blogposts."**
+
+Non-authenticated users can browse through all user blog posts by clicking on the 'Blog' link
+in the navbar which takes the user to the blog posts page. Authenticated users need to click
+on the 'Blog' -> 'View All Blog Posts' link in the navbar to get to the blog posts page.
+Each blog posts contains an image, a title, a description, author, pet name and published date.
+
+### Feature 12 - Create a blogpost
+
+**User story: "As a user, I want to be able to create a blogpost and share my story with the**
+**visitors of the website."**
+
+Only authenticated users can create blog posts. Authenticated users can create blog posts by
+clicking on the 'Blog' -> 'Create Blogpost' link in the navbar and then fill out and submit
+the applicable form displayed on the create blogpost page.
