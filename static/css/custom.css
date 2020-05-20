@@ -97,8 +97,11 @@ p {
 @media only screen and (max-width: 768px) {
     .banner {
         background: url(../../static/img/index_paws_small.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: left top;
         background-attachment: scroll;
-    }
+        height: 100vh;
 }
 
 .banner-chevron-container a:link,
