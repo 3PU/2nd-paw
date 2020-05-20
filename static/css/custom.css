@@ -94,6 +94,13 @@ p {
     height: 100vh;
 }
 
+@media only screen and (max-width: 768px) {
+    .banner {
+        background: url(../../static/img/index_paws_small.jpg);
+        background-attachment: scroll;
+    }
+}
+
 .banner-chevron-container a:link,
 .banner-chevron-container a:visited,
 .banner-chevron-container a:hover,
@@ -113,13 +120,6 @@ p {
     bottom: 0;
     color: #c2c3c3;
     text-align: center;
-}
-
-@media only screen and (max-width 768px) {
-    .banner {
-        background: url(../../static/img/index_paws_small.jpg);
-        background-attachment: scroll;
-    }
 }
 
 /* ----------------------------------------- INDEX */
