@@ -82,8 +82,9 @@
                         </li>
                         {% if product_count > 0 %}
                             <li class="nav-item active">
-                                <a class="nav-link" href="{% url 'view_cart' %}">
+                                <a aria-label="Shopping Cart" class="nav-link" href="{% url 'view_cart' %}">
                                     <span class="cart-icon"><i class="fas fa-shopping-cart"></i>
+                                        <span class="sr-only">Shopping Cart</span>
                                         <label class="badge badge-light">{{ product_count }}</label>
                                     </span>
                                 </a>
