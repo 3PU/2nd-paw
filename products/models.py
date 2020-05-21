@@ -25,5 +25,8 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=5, decimal_places=2, validators=[MinValueValidator(Decimal('2.00')), MaxValueValidator(Decimal('100.00'))])
     image = models.ImageField(upload_to="images")
 
+    class Meta:
+        ordering = ["id"]
+
     def __str__(self):
         return self.title
