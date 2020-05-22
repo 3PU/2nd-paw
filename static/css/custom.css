@@ -266,9 +266,8 @@ p {
 }
 
 @media only screen and (max-width: 576px) {
-    .product-image {
-        height: 12em;
-        width: 12em;
+    .card {
+        margin: 1em 0.5em;
     }
 }
 
