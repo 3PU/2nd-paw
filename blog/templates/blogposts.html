@@ -9,7 +9,7 @@
         <div class="col text-center">
             <h2>User Blogposts</h2>
             <hr>
-        <div>
+        </div>
         <div class="row justify-content-center">
             {% for post in blog_post %}
                 <div class="col-xs-12 col-sm-10 col-lg-5 col-xl-3 card">
@@ -22,7 +22,7 @@
                         <p><strong>Author: </strong>{{ post.author.get_full_name | capfirst }}</p>
                         <p><strong>Pet: </strong>{{ post.animal_name }}</p>
                         <hr>
-                        <p><i>{{ post.published_date }}</i></h6>
+                        <p><i>{{ post.published_date }}</i></p>
                     </div>
                 </div>
             {% endfor %}

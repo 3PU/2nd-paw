@@ -5,6 +5,7 @@ from .models import BlogPost
 from .forms import BlogPostForm
 import sweetify
 
+
 def get_blog_posts(request):
     """
     Creates a view that will return a list of all blog posts,
@@ -12,7 +13,7 @@ def get_blog_posts(request):
     """
 
     blog_post = BlogPost.objects.filter(published_date__lte=timezone.now()
-        ).order_by('-published_date')
+                                        ).order_by('-published_date')
     return render(request, "blogposts.html", {'blog_post': blog_post})
 
 
@@ -23,17 +24,19 @@ def create_blog_post(request):
         blog_form = BlogPostForm(request.POST, request.FILES)
 
         if blog_form.is_valid():
-            blog_post = blog_form.save(commit=False)            
+            blog_post = blog_form.save(commit=False)
             """Imports full name from user profile"""
             blog_post.author = request.user
             blog_post.save()
-            sweetify.success(request, "Thank you for your contribution. Your blog post has been successfully posted!", icon="success")
+            sweetify.success(request, """Thank you for your contribution.
+                                      Your blog post has been successfully
+                                      posted!""",
+                                      icon="success")
             return redirect("get_blog_posts")
-        
+
         else:
             blog_form = BlogPostForm()
-    
+
     else:
         blog_form = BlogPostForm()
-    
     return render(request, "create_blogpost.html", {'blog_form': blog_form})
