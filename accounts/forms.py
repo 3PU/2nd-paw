@@ -3,10 +3,12 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
+
 class UserLoginForm(forms.Form):
     """Form to be used to login user"""
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
+
 
 class UserRegistrationForm(UserCreationForm):
     """Form used to register a new user"""
@@ -16,11 +18,12 @@ class UserRegistrationForm(UserCreationForm):
     password2 = forms.CharField(
         label="Password Confirmation",
         widget=forms.PasswordInput)
-    
+
     class Meta:
         model = User
-        fields = ['email', 'username', 'first_name', 'last_name', 'password1', 'password2']
-    
+        fields = ['email', 'username', 'first_name',
+                  'last_name', 'password1', 'password2']
+
     def clean_email(self):
         email = self.cleaned_data.get('email')
         username = self.cleaned_data.get('username')
