@@ -24,7 +24,7 @@
                         {% if user.is_authenticated %}
                             <form method="POST" action="{% url 'add_item_to_cart' product.id %}">
                                 {% csrf_token %}
-                                <input name="quantity" type="hidden" value="1"class="form-control">
+                                <input name="quantity" type="hidden" value="1" class="form-control">
                                 <button class="btn btn-secondary" type="submit">Add to cart</button>
                             </form>
                         {% else %}

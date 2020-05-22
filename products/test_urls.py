@@ -1,13 +1,17 @@
 from django.test import TestCase
 from django.urls import reverse, resolve
-from products.views import all_products, products_animal_cat, products_animal_dog, products_category_clothes, products_category_toys, products_category_supplies, product_detail, donate_product, make_donation
+from products.views import all_products, products_animal_cat
+from products.views import products_animal_dog, products_category_clothes
+from products.views import products_category_toys, products_category_supplies
+from products.views import product_detail, donate_product, make_donation
+
 
 class TestUrls(TestCase):
-    
+
     def test_all_products_url_is_resolved(self):
         url = reverse("all_products")
         self.assertEquals(resolve(url).func, all_products)
-    
+
     def test_products_animal_cat_url_is_resolved(self):
         url = reverse("products_animal_cat")
         self.assertEquals(resolve(url).func, products_animal_cat)

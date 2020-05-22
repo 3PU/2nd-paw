@@ -3,8 +3,9 @@ from django.test import TestCase, Client, RequestFactory
 from django.shortcuts import get_object_or_404
 from products.models import Product
 
+
 class TestViews(TestCase):
-    
+
     def test_get_all_products_page(self):
         page = self.client.get("/products/all_products/")
         self.assertEqual(page.status_code, 200)
@@ -47,10 +48,11 @@ class TestViews(TestCase):
         page = self.client.get("/products/{0}/".format(product.id))
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, "product_detail.html")
-        
+
     def test_get_product_detail_page_for_product_that_does_not_exist(self):
         page = self.client.get("products/1")
         self.assertEqual(page.status_code, 404)
+
 
 class TestViewsAuthenticatedUser(TestCase):
 
@@ -70,5 +72,6 @@ class TestViewsAuthenticatedUser(TestCase):
         product.save()
 
         page = self.client.get("/products/donate_product/")
-        response = self.client.post("/products/donate_product/", {"title": "Create a Test"})
+        response = self.client.post("/products/donate_product/",
+                                    {"title": "Create a Test"})
         self.assertTemplateUsed(page, "create_product.html")

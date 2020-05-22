@@ -27,7 +27,7 @@
                                 <form method="POST" action="{% url 'add_item_to_cart' product.id %}">
                                     {% csrf_token %}
                                         <button class="btn btn-secondary" type="submit">Add to cart</button>
-                                        <input name="quantity" type="hidden" value="1" class="form-control" readonly>
+                                        <input name="quantity" type="number" value="1" class="form-control" readonly>
                                 </form>
                             {% else %}
                                 <a href="{% url 'login' %}" class="btn btn-secondary">Buy</a>

@@ -7,36 +7,35 @@
 {% block page_content %}
     <div class="products-container">
         <div class="col text-center">
-            <h2>Support Our Work</i></h2>
+            <h2>Support Our Work</h2>
             <hr>
-        <div>
+        </div>
         <div class="row justify-content-center">
             <div class="col-xs-12 col-sm-8 col-lg-6 col-xl-6 card">
                 <div>
-                    <img class="product-image rounded" src="{% static 'img/veterinarian.jpg' %}" alt="Smiling female veterinarian petting a kitten."></img>
+                    <img class="product-image rounded" src="{% static 'img/veterinarian.jpg' %}" alt="Smiling female veterinarian petting a kitten.">
                 </div>
                 <div class="product-text-container">
-                <i id="donation-icon" class="fas fa-hand-holding-usd"></i>
-                <h4>Monetary Donation</h4>
-                <p>Your generosity saves the lives of at-risk cats and dogs in the Stockholm area.
-                   Every donation to 2nd Paws goes to work immediately for cats and dogs.</p>
-                <p>Gifts support everything from foster care and adoption services to spay/neuter
-                   surgeries and lifesaving medical care, everything it takes to give cats and dogs
-                   their best chance to have healthy lives and find loving homes.</p>
-                <p>As a nonprofitanimal charity, we rely on cat and dog lovers like you to make this lifesaving
-                   work possible.</p>
-                <p>And just like you, we love helping cats & dogs!</p>
-                <p><strong>Thank you!</strong></p>                
-                {% for donation in donations %}
-                    <div class="d-inline-block">
-                        <form method="POST" action="{% url 'add_item_to_cart' donation.id %}">
-                            {% csrf_token %}
-                            <input name="quantity" type="hidden" min="10" max="1" class="form-control" placeholder="Quantity" value="1" readonly>
-                            <button class="btn btn-secondary" type="submit"><i id="donation-icon" class="fas fa-hand-holding-usd"></i>Donate {{ donation.price }}€</button>
-                        </form>
-                    </div>
-                {% endfor %}
-                <p class="custom-donation-reminder">*If you would like to donate a different amount, you can combine multiple donation alternatives by adding them to the shopping cart.</p>
+                    <h4>Monetary Donation</h4>
+                    <p>Your generosity saves the lives of at-risk cats and dogs in the Stockholm area.
+                    Every donation to 2nd Paws goes to work immediately for cats and dogs.</p>
+                    <p>Gifts support everything from foster care and adoption services to spay/neuter
+                    surgeries and lifesaving medical care, everything it takes to give cats and dogs
+                    their best chance to have healthy lives and find loving homes.</p>
+                    <p>As a nonprofitanimal charity, we rely on cat and dog lovers like you to make this lifesaving
+                    work possible.</p>
+                    <p>And just like you, we love helping cats & dogs!</p>
+                    <p><strong>Thank you!</strong></p>                
+                    {% for donation in donations %}
+                        <div class="d-inline-block">
+                            <form method="POST" action="{% url 'add_item_to_cart' donation.id %}">
+                                {% csrf_token %}
+                                <input name="quantity" type="number" min="0" max="10" class="form-control" placeholder="Quantity" value="1" readonly>
+                                <button class="btn btn-secondary" type="submit"><i id="donation-icon" class="fas fa-hand-holding-usd"></i>Donate {{ donation.price }}€</button>
+                            </form>
+                        </div>
+                    {% endfor %}
+                    <p class="custom-donation-reminder">*If you would like to donate a different amount, you can combine multiple donation alternatives by adding them to the shopping cart.</p>
                 </div>
             </div>
         </div>
