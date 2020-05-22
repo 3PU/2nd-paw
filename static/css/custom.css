@@ -2,6 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
 
+
 /* ----------------------------------------- GENERAL STYLING & FONTS*/
 
 html {
@@ -93,6 +94,7 @@ p {
     font-size: 0.6em;
 }
 
+
 /* ----------------------------------------- HEADER */
 
 .banner {
@@ -136,6 +138,7 @@ p {
     text-align: center;
 }
 
+
 /* ----------------------------------------- INDEX */
 
 .rounded-circle {
@@ -145,6 +148,7 @@ p {
 .top-about-image {
     padding: 4.5em 3em 3em 3em;
 }
+
 
 /* ----------------------------------------- FAQ */
 
@@ -192,6 +196,7 @@ p {
     color: #110b0bb3; 
 }
 
+
 /* ----------------------------------------- FORMS */
 
 .form-container {
@@ -210,6 +215,7 @@ p {
     font-size: 0.8em;
     font-style: italic;
 }
+
 
 /* ----------------------------------------- PRODUCTS */
 
@@ -322,12 +328,14 @@ p {
     font-size: 1.3em;
 }
 
+
 /* ----------------------------------------- PASSWORD RESET PAGES */
 
 .password-reset-header {
     padding: 1em 0;
     margin: 0;
 }
+
 
 /* ----------------------------------------- FOOTER */
 
