@@ -28,9 +28,10 @@ def create_blog_post(request):
             """Imports full name from user profile"""
             blog_post.author = request.user
             blog_post.save()
-            sweetify.success(request, """Thank you for your contribution.
-                                      Your blog post has been successfully
-                                      posted!""",
+            sweetify.success(request, """Thank you for your
+                                      contribution. Your blog
+                                      post has been posted
+                                      successfully!""",
                                       icon="success")
             return redirect("get_blog_posts")
 
