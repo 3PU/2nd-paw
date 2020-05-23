@@ -457,6 +457,39 @@ the applicable form displayed on the create blogpost page.
 
 ### Manual Testing
 
+| Test | Result |
+|------|--------|
+| When logging in, the 'Create Blog Post', 'Register' and 'Login' links in the navbar should disappear and be replaced with a 'logout' link instead. | Tested. No errors. Works as intended. |
+| When logging out, the 'Logout' link in the navbar should disappear and the 'Create Blog Post', 'Register' and 'Login' links should reapear. | Tested. No errors. Works as intended. |
+| Clicking on the navbar logo and 'Home' navigation link in the navbar should navigate to the home page. | Tested on all pages. No errrors. Works as intended. |
+| Clicking on the 'About 2nd Paw' link in the navbar when on the index page should scroll down to the applicable section. | Tested on the index page. No errrors. Works as intended. |
+| Clicking on the 'About 2nd Paw' link in the navbar when on any other page than the index page should navigate to the index page and scroll down to the applicable section. | Tested on the index page. No errrors. Works as intended. |
+| Clicking on the 'FAQ' link in the navbar should navigate to the FAQ page. | Tested on all pages. No errrors. Works as intended. |
+| Clicking on each question on the FAQ page should expand the applicable accordean section and collapse all other sections that are open. | Tested on all pages. No errrors. Works as intended. |
+| Clicking on the 'Contact Us' link in the navbar should navigate to the contact page. | Tested on all pages. No errrors. Works as intended. |
+| A user must enter a valid email address into the contact form 'email' field. | Tested. Error message is displayed if user tries to enter invalid email address. |
+| A user should not be able to enter more than 50 characters into the contact form 'subject' field. | Tested. Field is restricted to 50 characters. |
+| A user should not be able to enter more than 500 characters into the contact form 'subject' field. | Tested. Field is restricted to 500 characters. |
+| Clicking on any of the links in the 'browse shop' drop down menu in the navbar should navigate to the products page and display the chosen catogory of products. | Tested on all pages. No errors. Works as intended. |
+| Clicking on the 'Read More' button on a product card should navigate to the product detail page. | Tested on all product pages and products. No errrors. Works as intended. |
+| Clicking on the 'Add to cart' button on a product card when not logged in should navigate to the login page. | Tested on all product pages and products. No errrors. Works as intended. |
+| Clicking on the 'Add to cart' button on a product card when not logged in should place the product into the shopping cart, reveal the shopping cart button in the navbar and navigate to the shopping cart page. | Tested. No errors. Works as intended.|
+| Clicking on the 'Blog' link in the navbar when not logged in should navigate to the blogposts page. | Tested on all pages. No errors. Works as intended.
+| Clicking on the 'View All Blog Posts' link in the navbar when logged in should navigate to the blogposts page. | Tested on all pages. No errrors. Works as intended. |
+| Clicking on the 'Create Blog Post' link in the navbar when logged inshould navigate to the create blogpost page/form. | Tested on all pages. No errrors. Works as intended. |
+| Clicking on the 'Donate Product' link in the navbar when not logged in should navigate to the login page. | Tested on all pages. No errrors. Works as intended. |
+| Clicking on the 'Donate Product' link in the navbar when logged in should navigate to the product donation page/form. | Tested on all pages. No errrors. Works as intended. |
+| Clicking on the 'Support Us' link in the navbar should navigate to the monetary donation page. | Tested on all pages. No errrors. Works as intended. |
+| Clicking on the 'My Page' link in the navbar should navigate to the monetary donation page. | Tested on all pages. No errrors. Works as intended. |
+| Clicking on the 'Register' link in the navbar when not logged in should navigate to the registration page/form. | Tested on all pages. No errrors. Works as intended. |
+| Clicking on the 'Login' link in the navbar when not logged in should navigate to the login page/form. | Tested on all pages. No errrors. Works as intended. |
+| Entering the correct login credentials on the login page and clicking 'Login' should log the user in, navigate to the index page and display a confirmation alert. | Tested. No errors. Works as intended. |
+| Clicking on the 'click here' links on the login page should navigate to the registration and/or password reset page. | Tested. No errors. Works as intended. |
+| Clicking on the 'Logout' link in the navbar when logged in should log out the user, navigate to the index page and display a confirmation alert. | Tested on all pages. No errrors. Works as intended. |
+| Entering a search string and clicking on the search button in the navbar should search the database, navigate to the products page and display all applicable products that match the search. If no products match the search string, the page should display a messge that no products were found. | Tested. No errors. Works as intended. |
+
+
+
 ### Automated Testing
 
 ### Code Validation
@@ -525,14 +558,32 @@ Filename                    | Code      | Validator                             
 
 ### Navigation
 
+Navigation was kept simple with a fixed navbar at the page top in order to give the body as much real estate as possible.
+
+To not clutter the navbar with too many links, drop-down menus are used for the about, browse shop, blog and donate sections.
+
+On screens bewow 768px the navigation links are replaced by a nav-toggler to adjust for the lesser screen space available.
+
+The navbar brand logo is located in a classic top left corner location. When clicked the user will be returned to the homepage.
+
+<br/>
+
 ## Deployment
 
 ## Credits
 
 ### Content
 
+All of the text content on the website has been written by me.
+
 ### Media
+
+The static images used accross the page were obtained from [Pexels](https://www.pexels.com/) and [Google Images](https://images.google.com/).s
 
 ### Acknowledgements
 
+A very big thank you goes to my Code Institute Mentor Brian M. for his invaluable support and guidance throughout all my coding projects including this one.
+
 ### Disclaimer
+
+The content of this website is for educational purposes only.
