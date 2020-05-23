@@ -450,3 +450,89 @@ Each blog posts contains an image, a title, a description, author, pet name and 
 Only authenticated users can create blog posts. Authenticated users can create blog posts by
 clicking on the 'Blog' -> 'Create Blogpost' link in the navbar and then fill out and submit
 the applicable form displayed on the create blogpost page.
+
+## Defensive Design
+
+## Testing
+
+### Manual Testing
+
+### Automated Testing
+
+### Code Validation
+
+Filename                    | Code      | Validator                             | Outcome | Comments |
+----------------------------|-----------|---------------------------------------|---------|----------|
+| static/css/custom.css | CSS | https://jigsaw.w3.org/css-validator/validator | First test passed with 0 errors | n/a |
+| accounts/templates/login.html | HTML5 | https://validator.w3.org/ | First test passed with 0 errors | n/a |
+| accounts/templates/profile.html | HTML5 | https://validator.w3.org/ | First test passed with 0 errors | n/a |
+| accounts/templates/registration.html | HTML5 | https://validator.w3.org/ | First test passed with 0 errors | n/a |
+| accounts/backends.py | Python3 | http://pep8online.com/ | First test passed with 5 errors. Second test passed with 0 errors. | 2 lines with whitespace. 1 line missing blank line. 2 lines exceeded 79 characters. |
+| accounts/forms.py | Python3 | http://pep8online.com/ | First test passed with 5 errors. Second test passed with 0 errors. | 2 missing blank lines, 2 lines contained white space, 1 line exceeded 79 characters. |
+| accounts/test_urls.py | Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
+| accounts/test_views.py | Python3 | http://pep8online.com/ | First test passed with 3 errors. Second test passed with 0 errors. | 3 lines underindented. |
+| accounts/url_reset.py | Python3 | http://pep8online.com/ | First test passed with 1 errors. Second test passed with 0 errors. | 1 line exceeded 79 characters. |
+| accounts/urls.py | Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
+| accounts/views.py | Python3 | http://pep8online.com/ | First test passed with 4 errors. Second test passed with 0 errors. | 2 lines exceeded 79 characters. 2 missing blank lines. |
+| blog/templates/blogposts.html | HTML5 | https://validator.w3.org/ | First test passed with 2 HTML errors. Second test passed with 0 errors. | 1 stray end tag `</h6>`. 1 unclosed div. |
+| blog/templates/create_blogpost.html | HTML5 | https://validator.w3.org/ | First test passed with 0 errors | n/a |
+| blog/forms.py | Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
+| blog/models.py | Python3 | http://pep8online.com/ | First test passed with 2 errors. Second test passed with 0 errors. | 2 missing whitespaces around operators. |
+| blog/test_forms.py | Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
+| blog/test_models.py | Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
+| blog/test_urls.py | Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
+| blog/test_views.py | Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
+| blog/urls.py | Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
+| blog/views.py | Python3 | http://pep8online.com/ | First test passed with 2 errors. Second test passed with 0 errors. | Closing bracket not matching visual indentation and trailing whitespace. |
+| cart/templates/cart.html | HTML5 | https://validator.w3.org/ | First test passed with 0 errors | n/a |
+| cart/contexts.py | Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
+| cart/test_views.py | Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
+| cart/urls.py | Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
+| cart/views.py | Python3 | http://pep8online.com/ | First test passed with 3 errors. Second test passed with 0 errors. | 3 trailing whitespaces. |
+| checkout/templates/cart.html| HTML5 | https://validator.w3.org/ | First test passed with 0 errors | n/a |
+| checkout/admin.py | Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
+| checkout/forms.py | Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
+| checkout/models.py | Python3 | http://pep8online.com/ | First test passed with 2 errors. Second test passed with 0 errors. | 1 unexpected space around keyword/parameter. 1 line too long. |
+| checkout/test_urls.py | Python3 | http://pep8online.com/ | First test passed with 1 errors. Second test passed with 0 errors. | 1 expected indented block. |
+| checkout/test_views.py | Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
+| checkout/urls.py| Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
+| home/templates/contact.html | HTML5 | https://validator.w3.org/ | First test passed with 0 errors | n/a |
+| home/templates/faq.html | HTML5 | https://validator.w3.org/ | First test passed with 11 HTML errors. Second test passed with 0 errors. | Multiple quotes missing and multiple aria-labelledby pointed to same element id. |
+| home/templates/index.html | HTML5 | https://validator.w3.org/ | First test passed with 0 errors | n/a |
+| home/forms.py | Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
+| home/test_views.py | Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
+| home/views.py | Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
+| products/templates/create_product.html | HTML5 | https://validator.w3.org/ | First test passed with 0 errors | n/a |
+| products/templates/donation.html| HTML5 | https://validator.w3.org/ | First test passed with 1 HTML errors. Second test passed with 0 errors. | 1 stray end tag `</i>` found. |
+| products/templates/product_detail.html | HTML5 | https://validator.w3.org/ | First test passed with 1 HTML errors. Second test passed with 0 errors. | 1 no space between attributes found. |
+| products/templates/products.html | HTML5 | https://validator.w3.org/ | First test passed with 0 errors | n/a |
+| products/forms.py | Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
+| products/models.py | Python3 | http://pep8online.com/ | First test passed with 1 error. Second test passed with 1 errors (unable to rectify). | 1 line too long, unable to rectify. |
+| products/test_urls.py | Python3 | http://pep8online.com/ | First test passed with 1 error. Second test passed with 0 errors. | 1 line too long. |
+| products/test_views.py| Python3 | http://pep8online.com/ | First test passed with 1 error. Second test passed with 0 errors. | 1 line too long. |
+| products/test.py | Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
+| products/urls.py | Python3 | http://pep8online.com/ | First test passed with 1 error. Second test passed with 0 errors. | 1 line too long. |
+| products/views.py | Python3 | http://pep8online.com/ | First test passed with 3 errors. Second test passed with 0 errors. | 3 blank lines contained whitespace. |
+| search/test_views.py | Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
+| search/urls.py | Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
+| search/views.py | Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
+
+### Responsive Design
+
+### Screen Size Testing
+
+### Browser Compability
+
+### Navigation
+
+## Deployment
+
+## Credits
+
+### Content
+
+### Media
+
+### Acknowledgements
+
+### Disclaimer
