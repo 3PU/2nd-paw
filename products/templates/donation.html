@@ -30,7 +30,7 @@
                         <div class="d-inline-block">
                             <form method="POST" action="{% url 'add_item_to_cart' donation.id %}">
                                 {% csrf_token %}
-                                <input name="quantity" type="number" min="0" max="10" class="form-control" placeholder="Quantity" value="1" readonly>
+                                <input name="quantity" type="hidden" min="0" max="10" class="form-control" placeholder="Quantity" value="1" readonly>
                                 <button class="btn btn-secondary" type="submit"><i id="donation-icon" class="fas fa-hand-holding-usd"></i>Donate {{ donation.price }}€</button>
                             </form>
                         </div>
