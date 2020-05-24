@@ -457,10 +457,10 @@ the applicable form displayed on the create blogpost page.
 
 ### Manual Testing
 
+Below is a list of manual testing that has been performed. The order of the tests follows the structure of the links in the navbar from left to right.
+
 | Test | Result |
 |------|--------|
-| When logging in, the 'Create Blog Post', 'Register' and 'Login' links in the navbar should disappear and be replaced with a 'logout' link instead. | Tested. No errors. Works as intended. |
-| When logging out, the 'Logout' link in the navbar should disappear and the 'Create Blog Post', 'Register' and 'Login' links should reapear. | Tested. No errors. Works as intended. |
 | Clicking on the navbar logo and 'Home' navigation link in the navbar should navigate to the home page. | Tested on all pages. No errrors. Works as intended. |
 | Clicking on the 'About 2nd Paw' link in the navbar when on the index page should scroll down to the applicable section. | Tested on the index page. No errrors. Works as intended. |
 | Clicking on the 'About 2nd Paw' link in the navbar when on any other page than the index page should navigate to the index page and scroll down to the applicable section. | Tested on the index page. No errrors. Works as intended. |
@@ -473,24 +473,34 @@ the applicable form displayed on the create blogpost page.
 | Clicking on any of the links in the 'browse shop' drop down menu in the navbar should navigate to the products page and display the chosen catogory of products. | Tested on all pages. No errors. Works as intended. |
 | Clicking on the 'Read More' button on a product card should navigate to the product detail page. | Tested on all product pages and products. No errrors. Works as intended. |
 | Clicking on the 'Add to cart' button on a product card when not logged in should navigate to the login page. | Tested on all product pages and products. No errrors. Works as intended. |
-| Clicking on the 'Add to cart' button on a product card when not logged in should place the product into the shopping cart, reveal the shopping cart button in the navbar and navigate to the shopping cart page. | Tested. No errors. Works as intended.|
+| Clicking on the 'Add to cart' button on a product card when logged in should place the product into the shopping cart, reveal the shopping cart button in the navbar and navigate to the shopping cart page. | Tested. No errors. Works as intended.|
 | Clicking on the 'Blog' link in the navbar when not logged in should navigate to the blogposts page. | Tested on all pages. No errors. Works as intended.
 | Clicking on the 'View All Blog Posts' link in the navbar when logged in should navigate to the blogposts page. | Tested on all pages. No errrors. Works as intended. |
 | Clicking on the 'Create Blog Post' link in the navbar when logged inshould navigate to the create blogpost page/form. | Tested on all pages. No errrors. Works as intended. |
+| On the create blog post page, a user should not be able to exceed the max # of characters in each formfield (title = 75, animal name = 100, content = 500). | Tested. Field restrictions work as intended.
 | Clicking on the 'Donate Product' link in the navbar when not logged in should navigate to the login page. | Tested on all pages. No errrors. Works as intended. |
 | Clicking on the 'Donate Product' link in the navbar when logged in should navigate to the product donation page/form. | Tested on all pages. No errrors. Works as intended. |
+| On the donate product page, a user should not be able to exceed the max # of characters in each formfield (title = 75, category = 100, animal = 20, condition = 20, description = 500). | Tested. Field restrictions work as intended.
+| Clicking on the 'Donate' button on the donate product page after completing all formfields correctly should add the product to the database, display a confirmation alert message and navigate to the products page | Tested. No errors. Works as intended.
 | Clicking on the 'Support Us' link in the navbar should navigate to the monetary donation page. | Tested on all pages. No errrors. Works as intended. |
+| Clicking on the 'Donate X€' buttons on the support us page (logged in or not) should place the doanations into the shopping cart, reveal the shopping cart button in the navbar and navigate to the shopping cart page. | Tested. No errors. Works as intended.|
 | Clicking on the 'My Page' link in the navbar should navigate to the monetary donation page. | Tested on all pages. No errrors. Works as intended. |
 | Clicking on the 'Register' link in the navbar when not logged in should navigate to the registration page/form. | Tested on all pages. No errrors. Works as intended. |
 | Clicking on the 'Login' link in the navbar when not logged in should navigate to the login page/form. | Tested on all pages. No errrors. Works as intended. |
-| Entering the correct login credentials on the login page and clicking 'Login' should log the user in, navigate to the index page and display a confirmation alert. | Tested. No errors. Works as intended. |
 | Clicking on the 'click here' links on the login page should navigate to the registration and/or password reset page. | Tested. No errors. Works as intended. |
+| Entering the correct login credentials on the login page and clicking 'Login' should log the user in, navigate to the index page and display a confirmation alert. | Tested. No errors. Works as intended. |
+| When logging in, the 'Create Blog Post', 'Register' and 'Login' links in the navbar should disappear and be replaced with a 'logout' link instead. | Tested. No errors. Works as intended. |
 | Clicking on the 'Logout' link in the navbar when logged in should log out the user, navigate to the index page and display a confirmation alert. | Tested on all pages. No errrors. Works as intended. |
+| When logging out, the 'Logout' link in the navbar should disappear and the 'Create Blog Post', 'Register' and 'Login' links should reapear. | Tested. No errors. Works as intended. |
 | Entering a search string and clicking on the search button in the navbar should search the database, navigate to the products page and display all applicable products that match the search. If no products match the search string, the page should display a messge that no products were found. | Tested. No errors. Works as intended. |
 
-
-
 ### Automated Testing
+
+In total, I created 50 automated tests of forms, models, views and urls for each app in the project.
+
+Total coverage is 83%.
+
+The full report of the automated tests performed can be accessed [here](https://github.com/3PU/2nd-paw/blob/master/testing/automated_testing_report.pdf).
 
 ### Code Validation
 
