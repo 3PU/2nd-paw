@@ -165,6 +165,7 @@ p {
 .faq-accordion {
     padding: 0;
     margin: 0;
+    text-align: center;
 }
 
 .card-header {
@@ -178,22 +179,23 @@ p {
 
 .accordion-button {
     font-size: 1.1em;
-    color: #110b0bb3;
+    color:#585454;
     font-weight: 500;
 }
 
 .accordion-card {
-    background-color: #110b0bb3;
+    background-color: #585454;
     color: #fff;
     margin: 0;
 }
 
+.btn_link,
 .btn-link.focus,
 .btn-link:focus,
 .btn-link:hover,
 .btn:hover {
     text-decoration: none;
-    color: #110b0bb3; 
+    color: #585454; 
 }
 
 
