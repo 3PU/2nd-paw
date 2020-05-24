@@ -63,8 +63,7 @@ def donate_product(request, pk=None):
         if product_form.is_valid():
             product_form.save()
             sweetify.success(request, """Thank you for your contribution.
-                                      Your product has been added to the
-                                      shop!""",
+                                      Your product has been added to the shop!""",
                                       icon="success")
             return redirect("all_products")
 
