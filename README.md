@@ -13,9 +13,12 @@
 - Technologies
 - UI
 - UX
+- User Stories
+- Pages & Functionality
 - Database
 - Accessibility
 - Challenges
+- Mistakes
 - Features
 - Defensive Design
 - Testing
@@ -157,7 +160,7 @@ of the page to naturally provoke users to scroll down where they can find the 'A
 the navbar instead, the page will scroll down (smooth scroll on chrome browsers only).
 
 The navbar should provide users with an intuitive way to engage with the website and I therefore did not feel the need to add descriptive text to the index page,
-a choice that has proven to be effective via testing from multiple first-time users.
+a choice that has proven to be effective which has been confirmed by multiple first-time users/viewers of the site (friends & family).
 
 ### Responsiveness
 
@@ -170,7 +173,7 @@ This is primarily achieved by using bootstrap and custom-written css (for more d
 ## UX
 
 The overall goal of the website is to provide visitors with the ability to donate pet products they no longer need or use
-or buy pet products at a discounted price, and by that financially support the local cat and dog shelters.
+or buy pet products at a discounted price, and by that financially support the local cat and dog shelters in the 2nd Paws network.
 
 Visitors can also choose to make monetary donations or create a blogpost showing how their pet liked a product purchased
 through the website.
@@ -226,8 +229,8 @@ Below each product that is displayed there is one 'read more' and one 'buy' butt
 user to the product detail page where a more detailed description of the product is provided. The buy button adds
 the applicable product to the shopping cart.
 
-All sections are avilable to all users, logged in or not, but non-logged in users cannot add products to the shopping cart.
-If a user clicks on the 'buy' button, the user is redirected to the login page, where the user can choose to log in or
+All sections are avilable to all users, logged in or not, but non-authenticated in users cannot add products to the shopping cart.
+If a non-authenticated user clicks on the 'buy' button, the user is redirected to the login page, where the user can choose to log in or
 sign up for a free account.
 
 If no products are available in the database a text is displayed telling the user that no products have been found.
@@ -273,7 +276,7 @@ On this page the user can log in or continue to the password reset or registrati
 
 ### Logout
 
-This link is available for authenticated users only and disappears once a user is logged in.
+This link is available for authenticated users only and disappears once a user is logged out.
 
 ### Search
 
@@ -282,7 +285,7 @@ yield any results a text is displayed telling the user that no products have bee
 
 ### Shopping cart
 
-The shopping cart icon is only displayed if any products have been added to the shopping cart.
+The shopping cart icon is only displayed if at least 1 product has been added to the shopping cart.
 
 ### Checkout
 
@@ -292,8 +295,9 @@ The checkout page is only available via the checkout button the shopping cart pa
 
 ## Database
 
-Development Database: SQLite3
-Production Database: PostgresSQL
+Development Database: **SQLite3**
+
+Production Database: **PostgresSQL**
 
 The following tables and values are stored in both the development and production database:
 
@@ -309,18 +313,18 @@ Both databases contain and store the following tables and values:
 
 ## Accessibility
 
-To increase accessibility of the website, ALT attributes have been added to all static images and hidden screenreader
-utilities (sr-only) to the shopping cart icon.
+To increase accessibility of the website, ALT attributes have been added to all static images and a hidden screenreader
+utility (sr-only) has been added to the shopping cart icon.
 
 <br/>
 
 ## Challenges
 
 My overall experience when creating this application was smooth and straight forward once I had a good understanding of
-all the concepts.
+all the concepts taught in the course.
 
 Two of the biggest challenges I encountered were related to the design and even though they were simplistic in nature,
-they proved difficult to solve.
+they provived quite a challenge.
 
 The first challenge was the footer which I wanted to stick to the bottom of the page at all times. Normally, this
 is easy to solve, but since I used a fullscreen and fixed background image on the index page, fixating the footer
@@ -330,9 +334,10 @@ work on the index page, but instead left the footer floating in the middle of th
 of the bottom-margin I uses. The way I solved this problem was to create two different footers, one relative and one
 fixed. The relative footer is used on the index page and the relative footer is used on all other pages.
 
-The second challenge was the actual background image on the index page. For some reason, when testing the website on
+The second challenge was the actual background image on the index page when viewed on mobile phones. Everything looked
+good in the developer tools and online responsive testing tools, but for some reason, when testing the website on
 phones specifically, none of the phones used did scale the image, leaving it in its original size. To solve this,
-I created a smaller version that replaces the larger image on screen sizes below 768px.
+I created a smaller version that replaces the larger image on screen sizes below 768px using a media query.
 
 <br/>
 
@@ -489,7 +494,7 @@ the applicable form displayed on the create blogpost page.
 
 The main concern when building this application from a defensive design standpoint was to limit the user from being able to spam the database.
 
-For this project, to display my understanding and skill of the CRUD functionality and databases I've allowed any user to add products and create blogposts.
+For this project, I've allowed authentiacated users to add products to the database and create blogposts.
 
 A future feature I'm looking to implement is to allow users to editing and/or delete their donated products and/or blogposts by connecting each
 donated product and blogpost to a user. Only the creator/owner of a donated product or blogpost can edit or delete it, alternatively a admin type
@@ -626,7 +631,7 @@ The application was also tested by friends and family across multiple devices an
 
 For final testing [Responsinator](https://www.responsinator.com/) was used to test the application across multiple devices.
 
-The biggest challenge in terms of responsive design for this project was the variable of users being able to upload images with a variety of formats.
+One challenge in terms of responsive design for this project was the variable of users being able to upload images in a variety of formats.
 
 To ensure the images are not distorted and displayed as good as possible, i did not specify a fixed height or width, but instead set the image
 background-size to `cover` and defined a `max-width` and `max-height` so the image is represented as intended by the user.
@@ -685,9 +690,8 @@ os.environ["STRIPE_PUBLISHABLE"] = "enter key here"
 os.environ["STRIPE_SECRET"] = "enter key here"
 os.environ["AWS_ACCESS_KEY_ID"] = "enter key here"
 os.environ["AWS_SECRET_ACCESS_KEY"] = "enter key here"
-os.environ.setdefault("EMAIL_USER",'enter email details here')
-os.environ.setdefault("EMAIL_PASS",'enter key details here')
-os.environ["DEVELOPMENT"] = "1"
+os.environ["EMAIL_USER"] ="enter email details here"
+os.environ["EMAIL_PASS"] = "enter key details here"
 
 ```
 9. Make migrations and migrate to create the database by using the terminal command `python3 manage.py makemigrations` and `python3 manage.py migrate`.
@@ -709,6 +713,8 @@ that you are using for your static and media files.
 | DATABASE_URL | Postgres url link |
 | AWS_ACCESS_KEY_ID | Secret key value |
 | AWS_SECRET_ACCESS_KEY | Secret key value |
+| EMAIL_USER | Email username |
+| EMAIL_PASS | Email password |
 
 3. Install Heroku via the terminal using `npm install -g Heroku`.
 4. Log into Heroku via the terminal using `heroku login` and follow the on screen instructions to log in.
