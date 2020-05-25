@@ -22,6 +22,8 @@
 - Deployment
 - Credits
 
+<br/>
+
 ## General Information
 
 ### Code Institute Coding Bootcamp - Full Stack Frameworks with Django Milestone Project
@@ -64,6 +66,8 @@ The wireframe mockups below have been created with [MockFlow](https://mockflow.c
 | ![Registration - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_registratin_large_screen.png) | ![Registration - Small](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_registratin_small_screen.png) |
 | ![Login - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_login_large_screen.png) | ![Login - Small](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_login_small_screen.png) |
 
+<br/>
+
 ## Technologies
 
 ### Languages
@@ -91,7 +95,6 @@ The wireframe mockups below have been created with [MockFlow](https://mockflow.c
 - Google Images
 - Mockflow
 
-
 ### Databases
 
 - SQLite3
@@ -114,8 +117,7 @@ The following colors are used throughout the project:
 - #00000 (Text, shadows and elements with various degrees of opacity)
 - #c2c3c3 (Elements)
 - #a2a2a2 (Element hover)
-- #585454 (Buttons & borders)
-- #110b0bb3 (Accordion)
+- #585454 (Buttons, borders and accordion)
 
 ### Fonts
 
@@ -152,6 +154,8 @@ The website has been built with a mobile-first approach and is highly responsive
 
 This is primarily achieved by using bootstrap and custom-written css (for more details see testing section).
 
+<br/>
+
 ## UX
 
 The overall goal of the website is to provide visitors with the ability to donate pet products they no longer need or use
@@ -159,6 +163,8 @@ or buy pet products at a discounted price, and by that financially support the l
 
 Visitors can also choose to make monetary donations or create a blogpost showing how their pet liked a product purchased
 through the website.
+
+<br/>
 
 ## User Stories
 
@@ -288,6 +294,8 @@ Both databases contain and store the following tables and values:
 | blogpost | title | author | animal_name | content | published_date | image | `n/a` |
 | product | title | category | animal | condition | description | price | image |
 
+<br/>
+
 ## Accessibility
 
 To increase accessibility of the website, ALT attributes have been added to all static images and hidden screenreader
@@ -316,6 +324,19 @@ phones specifically, none of the phones used did scale the image, leaving it in 
 I created a smaller version that replaces the larger image on screen sizes below 768px.
 
 <br/>
+
+## Mistakes
+
+One uninentional mistake I made towards the end of the project was to accidentially upload the coverage html folder
+to my github repository. The intention was to share the total coverage report and percentage of my automates tests,
+but instead of only uploading the summary, the entire folder was uploaded.
+
+Something that I was not aware of was that the html coverage report contained a copy of each file in the entire
+application including files that were included in my `.gitignore` file. But I quickly noticed my mistake and deleted
+the folder again. Unfortunately, the commit history still contains a copy of those files so I had to change all
+the secret variables and keys after this incident to make sure no one could
+
+<br/>>
 
 ## Features
 
@@ -451,7 +472,11 @@ Only authenticated users can create blog posts. Authenticated users can create b
 clicking on the 'Blog' -> 'Create Blogpost' link in the navbar and then fill out and submit
 the applicable form displayed on the create blogpost page.
 
+<br/>
+
 ## Defensive Design
+
+<br/>
 
 ## Testing
 
@@ -462,6 +487,7 @@ Below is a list of manual testing that has been performed. The order of the test
 | Test | Result |
 |------|--------|
 | Clicking on the navbar logo and 'Home' navigation link in the navbar should navigate to the home page. | Tested on all pages. No errrors. Works as intended. |
+| Clicking on the chevron icon at the bottom of the index page should scroll down to the about section. | Tested on all pages. No errrors. Works as intended. |
 | Clicking on the 'About 2nd Paw' link in the navbar when on the index page should scroll down to the applicable section. | Tested on the index page. No errrors. Works as intended. |
 | Clicking on the 'About 2nd Paw' link in the navbar when on any other page than the index page should navigate to the index page and scroll down to the applicable section. | Tested on the index page. No errrors. Works as intended. |
 | Clicking on the 'FAQ' link in the navbar should navigate to the FAQ page. | Tested on all pages. No errrors. Works as intended. |
@@ -562,9 +588,35 @@ Filename                    | Code      | Validator                             
 
 ### Responsive Design
 
-### Screen Size Testing
+The application has been build with a mobile-first approach and throughout the development process, chrome developer tools, multiple PC's and mobile devices
+where used to ensure responsiveness across all screen resolutions.
+
+The application was also tested by friends and family across multiple devices and browsers.
+
+For final testing [Responsinator](https://www.responsinator.com/) was used to test the application across multiple devices.
+
+The biggest challenge in terms of responsive design for this project was the variable of users being able to upload images with a variety of formats.
+
+To ensure the images are not distorted and displayed as good as possible, i did not specify a fixed height or width, but instead set the image
+background-size to `cover` and defined a `max-width` and `max-height` so the image is represented as intended by the user.
+
+### Screen Size Testing/Compability
+
+Screen Size         | Size              | Comments
+--------------------|-------------------|---------
+X-Small             | <768px            | Left/right padding of `.card` class was too big which compressed the product and blogposts too much. Decreased left/right padding on screens below <768px by implementing a media query. |
+Small               | >=768px           | Passed, no changes needed. |
+Medium              | >=992px           | Passed, no changes needed. |
+Large               | >=1200px          | Passed, no changes needed. |
 
 ### Browser Compability
+
+Browser             | Version           | Comments
+--------------------|-------------------|---------
+Firefox             | 72.0.2 (64-bit)   | No errors observed |
+Edge                | 44.18362.449.0    | Correct color was not applied to the background of the expandable accordion answers nor the links due to a color code not compatible with this browser. Color code adjusted which rectified the issue. |
+Chrome              | 80.0.3987.122     | No errors observed |
+Opera               | 67.0.3575.31      | No errors observed |
 
 ### Navigation
 
@@ -579,6 +631,67 @@ The navbar brand logo is located in a classic top left corner location. When cli
 <br/>
 
 ## Deployment
+
+The project is stored in a GitHub  [repository](https://github.com/3PU/2nd-paw) and hosted on [Heroku](https://codei-2nd-paws.herokuapp.com/).
+
+**How to clone this repository and run the code locally on your machine:**
+
+1. When logged into GitHub, navigate to the repository you want to clone. For this project, click [here](https://github.com/3PU/2nd-paw).
+2. Click on the **'Clone or download'** button which should be displayed above and to the right of the repository files.
+3. You are presented with a HTTPs address. Copy this address by pressing the button to the right of the address.
+4. From your preferred IDE, open your terminal.
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type **'git clone https://github.com/username/filename'**.
+7. Install all required modules / packages with the command **'pip3 -r requirements.txt'**.
+8. If youa re using AWS Cloud9 or GitPod, create a new file in the root directory called `env.py` and add the following variables to
+the file:
+
+```
+import os
+
+os.environ["SECRET_KEY"] = "enter key here"
+os.environ["STRIPE_PUBLISHABLE"] = "enter key here"
+os.environ["STRIPE_SECRET"] = "enter key here"
+os.environ["AWS_ACCESS_KEY_ID"] = "enter key here"
+os.environ["AWS_SECRET_ACCESS_KEY"] = "enter key here"
+os.environ.setdefault("EMAIL_USER",'enter email details here')
+os.environ.setdefault("EMAIL_PASS",'enter key details here')
+os.environ["DEVELOPMENT"] = "1"
+
+```
+9. Make migrations and migrate to create the database by using the terminal command `python3 manage.py makemigrations` and `python3 manage.py migrate`.
+10. Create a superuser by using the terminal command `python3 manage.py createsuperuser` and follow the instructions prompted in the terminal window.
+11. If you are not using S3 bucket to host the static and media files, update the static and media links in the `settings.py` file to the folder links
+that you are using for your static and media files.
+12. The app can now be run locally using the terminal command `python3 manage.py` runserver.
+
+**How to deploy to Heroku using GitPod:**
+
+1. Created a new application using the Heroku dashboard.
+2. Go to settings tab, click on 'reveal config vars' and add the following config vars from your `env.py`file:
+
+| Key | Value |
+|-----|-------|
+| SECRET_KEY | Secret key value |
+| STRIPE_PUBLISHABLE | Secret key value |
+| STRIPE_SECRET | Secret key value |
+| DATABASE_URL | Postgres url link |
+| AWS_ACCESS_KEY_ID | Secret key value |
+| AWS_SECRET_ACCESS_KEY | Secret key value |
+
+3. Install Heroku via the terminal using `npm install -g Heroku`.
+4. Log into Heroku via the terminal using `heroku login` and follow the on screen instructions to log in.
+5. Create a requirements.txt via the terminal using `pip3 freeze > requirements.txt`.
+6. Create a Procfile via the terminal using `echo web: python app.py > Procfile`.
+7. Connect GitHub to Heroku via the terminal using `heroku git:remote a appname`, in this example `heroku git:remote a codei-2nd-paws`.
+8. Commit all files in your project via the terminalole using `git add .' and 'git commit -m "Message"`.
+9. Push and deploy all files to github and Heroku using the terminal command `gith push && gith push heroku master`.
+10. Enter the heroku postgres database url to the settings.py file.
+11. Make migrations and migrate to create the database by using the terminal command `python3 manage.py makemigrations` and `python3 manage.py migrate`.
+12. Create a superuser in your new database by using the terminal command `python3 manage.py createsuperuser` and follow the instructions prompted in the terminal window.
+13. After setting up the database and the build on Heroku is complete, click on the heroku link or 'view app' button to run the application via Heroku.
+
+<br/>
 
 ## Credits
 
