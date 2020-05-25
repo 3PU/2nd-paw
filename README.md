@@ -53,17 +53,38 @@ A live demo of the website can be found [here](https://codei-2nd-paws.herokuapp.
 The wireframe mockups below have been created with [MockFlow](https://mockflow.com/) to illustrate the initial structure and idea for each page prior to production.
 
 | Large Screens | Small Screens |
-|--------------|--------------|
+|-|-|
+| Index Page - Desktop | Index Page - Mobile |
+|-|-|
 | ![Index - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_index_large_screen.png) | ![Index- Small](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_index_small_screen.png) |
+| About Page - Desktop | About Page - Mobile |
+|-|-|
 | ![About - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_about_large_screen.png) | ![About- Small](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_about_small_screen.png) |
+| FAQ Page - Desktop | FAQ Page - Mobile |
+|-|-|
 | ![FAQ - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_faq_large_screen.png) | ![FAQ- Small](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_faq_small_screen.png) |
+| Contact Page - Desktop | Contact Page - Mobile |
+|-|-|
 | ![Contact - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_contact_large_screen.png) | ![Contact- Small](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_contact_small_screen.png) |
+| Donate Product Page - Desktop | Donate Product Page - Mobile |
+|-|-|
 | ![Donate Product - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_donate_product_large_screen.png) | ![Donate Product- Small](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_donate_product_small_screen.png) |
-| ![Products - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_all_products_large_screen.png) | ![Products Page](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_all_products_small_screen.png) |
+| Products Page - Desktop | Products Page - Mobile |
+|-|-|| ![Products - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_all_products_large_screen.png) | ![Products Page](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_all_products_small_screen.png) |
+| Product Detail Page - Desktop | Product Detail Page - Mobile |
+|-|-|
 | ![Product Detail - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_product_detail_large_screen.png) | ![Product Detail- Small](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_product_detail_small_screen.png) |
+| Create Blogpost Page - Desktop | Create Blogpost Page - Mobile |
+|-|-|
 | ![Create Blogpost - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_create_blogpost_large_screen.png) | ![Create Blogpost - Small](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_create_blogpost_small_screen.png) |
+| Blogposts Page - Desktop | Blogposts Page - Mobile |
+|-|-|
 | ![Blogposts - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_blogposts_large_screen.png) | ![Blogposts - Small](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_blogposts_small_screen.png) |
+| Registration Page - Desktop | Registration Page - Mobile |
+|-|-|
 | ![Registration - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_registratin_large_screen.png) | ![Registration - Small](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_registratin_small_screen.png) |
+| Login Page - Desktop | Login Page - Mobile |
+|-|-|
 | ![Login - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_login_large_screen.png) | ![Login - Small](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_login_small_screen.png) |
 
 <br/>
@@ -336,7 +357,7 @@ application including files that were included in my `.gitignore` file. But I qu
 the folder again. Unfortunately, the commit history still contains a copy of those files so I had to change all
 the secret variables and keys after this incident to make sure no one could
 
-<br/>>
+<br/>
 
 ## Features
 
@@ -476,6 +497,26 @@ the applicable form displayed on the create blogpost page.
 
 ## Defensive Design
 
+The main concern when building this application from a defensive design standpoint was to limit the user from being able to spam the database.
+
+For this project, to display my understanding and skill of the CRUD functionality and databases I've allowed any user to add products and create blogposts.
+
+A future feature I'm looking to implement is to allow users to editing and/or delete their donated products and/or blogposts by connecting each
+donated product and blogpost to a user. Only the creator/owner of a donated product or blogpost can edit or delete it, alternatively a admin type
+user can edit and/or delete them.
+
+Currently, only admin type users can edit or delete any record in the database.
+
+On top of the validation that is provided by Django, for now, this application only uses front-end data validation via the formfield attributes
+(max # of characters, only accepting valid url/email/image, etc.).
+
+This ensures that the amount of data for each entry is limited/controlled, but the content of the data is not.
+
+A user could upload any text (for example offensive text) into the database at this point.
+
+This is why I'm looking to add back-end data validation in the future along with a manual approval from a admin user of the donations or blogpost,
+before the uploaded recipe/information is made publicly available.
+
 <br/>
 
 ## Testing
@@ -524,7 +565,7 @@ Below is a list of manual testing that has been performed. The order of the test
 
 In total, I created 50 automated tests of forms, models, views and urls for each app in the project.
 
-Total coverage is 83%.
+Total coverage is **83%**.
 
 The full report of the automated tests performed can be accessed [here](https://github.com/3PU/2nd-paw/blob/master/testing/automated_testing_report.pdf).
 
@@ -641,8 +682,8 @@ The project is stored in a GitHub  [repository](https://github.com/3PU/2nd-paw) 
 3. You are presented with a HTTPs address. Copy this address by pressing the button to the right of the address.
 4. From your preferred IDE, open your terminal.
 5. Change the current working directory to the location where you want the cloned directory to be made.
-6. Type **'git clone https://github.com/username/filename'**.
-7. Install all required modules / packages with the command **'pip3 -r requirements.txt'**.
+6. In the terminal, execute `git clone https://github.com/username/filename`.
+7. Install all required modules / packages with the command `pip3 -r requirements.txt`.
 8. If youa re using AWS Cloud9 or GitPod, create a new file in the root directory called `env.py` and add the following variables to
 the file:
 
