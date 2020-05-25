@@ -53,38 +53,27 @@ A live demo of the website can be found [here](https://codei-2nd-paws.herokuapp.
 The wireframe mockups below have been created with [MockFlow](https://mockflow.com/) to illustrate the initial structure and idea for each page prior to production.
 
 | Large Screens | Small Screens |
-|-|-|
 | Index Page - Desktop | Index Page - Mobile |
-|-|-|
 | ![Index - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_index_large_screen.png) | ![Index- Small](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_index_small_screen.png) |
 | About Page - Desktop | About Page - Mobile |
-|-|-|
 | ![About - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_about_large_screen.png) | ![About- Small](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_about_small_screen.png) |
 | FAQ Page - Desktop | FAQ Page - Mobile |
-|-|-|
 | ![FAQ - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_faq_large_screen.png) | ![FAQ- Small](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_faq_small_screen.png) |
 | Contact Page - Desktop | Contact Page - Mobile |
-|-|-|
 | ![Contact - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_contact_large_screen.png) | ![Contact- Small](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_contact_small_screen.png) |
 | Donate Product Page - Desktop | Donate Product Page - Mobile |
-|-|-|
 | ![Donate Product - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_donate_product_large_screen.png) | ![Donate Product- Small](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_donate_product_small_screen.png) |
 | Products Page - Desktop | Products Page - Mobile |
-|-|-|| ![Products - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_all_products_large_screen.png) | ![Products Page](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_all_products_small_screen.png) |
+| ![Products - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_all_products_large_screen.png) | ![Products Page](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_all_products_small_screen.png) |
 | Product Detail Page - Desktop | Product Detail Page - Mobile |
-|-|-|
 | ![Product Detail - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_product_detail_large_screen.png) | ![Product Detail- Small](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_product_detail_small_screen.png) |
 | Create Blogpost Page - Desktop | Create Blogpost Page - Mobile |
-|-|-|
 | ![Create Blogpost - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_create_blogpost_large_screen.png) | ![Create Blogpost - Small](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_create_blogpost_small_screen.png) |
 | Blogposts Page - Desktop | Blogposts Page - Mobile |
-|-|-|
 | ![Blogposts - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_blogposts_large_screen.png) | ![Blogposts - Small](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_blogposts_small_screen.png) |
 | Registration Page - Desktop | Registration Page - Mobile |
-|-|-|
 | ![Registration - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_registratin_large_screen.png) | ![Registration - Small](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_registratin_small_screen.png) |
 | Login Page - Desktop | Login Page - Mobile |
-|-|-|
 | ![Login - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_login_large_screen.png) | ![Login - Small](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_login_small_screen.png) |
 
 <br/>
