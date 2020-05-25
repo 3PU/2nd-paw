@@ -53,6 +53,7 @@ A live demo of the website can be found [here](https://codei-2nd-paws.herokuapp.
 The wireframe mockups below have been created with [MockFlow](https://mockflow.com/) to illustrate the initial structure and idea for each page prior to production.
 
 | Large Screens | Small Screens |
+|-|-|
 | Index Page - Desktop | Index Page - Mobile |
 | ![Index - Large](https://github.com/3PU/2nd-paw/blob/master/wireframes/large_screens/2nd_paw_index_large_screen.png) | ![Index- Small](https://github.com/3PU/2nd-paw/blob/master/wireframes/small_screens/2nd_paw_index_small_screen.png) |
 | About Page - Desktop | About Page - Mobile |
