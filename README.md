@@ -358,6 +358,8 @@ the secret variables and keys after this incident to make sure no one could
 
 ### Feature Overview
 
+**Existing Features:**
+
 - Users can learn more about the company behind the website.
 - Users can find answers to the most commonly asked questions.
 - Users can reach out and contact the company behind the website.
@@ -370,6 +372,16 @@ the secret variables and keys after this incident to make sure no one could
 - Users can make monetary donations.
 - Users can browse through all user blogposts.
 - Users can create a blogpost and share their story with the visitors of the website.
+
+**Future Features:**
+
+In the future, I'm looking to implement the following features:
+
+- Allowing users to edit/delete their donated products or blogposts.
+- Adding social share buttons so users can share a product or blogpost with others.
+- Adding a like and comment feature to blogposts so users can like and comment on blogposts.
+- Implement admin approvla of all contributions from users (product donations or blogposts) before they are visible on the page to ensure the quality and content of the contribution is acceptable.
+- Add information pages about the cat/dog shelters 2nd Paws supports with regularly updated information showing the positive impact the 2nd Paw users have on their work.
 
 ### Feature 1 - Learn more about the company
 
@@ -503,7 +515,7 @@ user can edit and/or delete them.
 Currently, only admin type users can edit or delete any record in the database.
 
 On top of the validation that is provided by Django, for now, this application only uses front-end data validation via the formfield attributes
-(max # of characters, only accepting valid url/email/image, etc.).
+(max # of characters, only accepting valid url/email/image, etc.). The only exception is the user registration form which has a backend validation.
 
 This ensures that the amount of data for each entry is limited/controlled, but the content of the data is not.
 
@@ -511,6 +523,9 @@ A user could upload any text (for example offensive text) into the database at t
 
 This is why I'm looking to add back-end data validation in the future along with a manual approval from a admin user of the donations or blogpost,
 before the uploaded recipe/information is made publicly available.
+
+For all views/pages that require a user to be authenticated in order to access/view it, I've added the `@login_requires` decorator to ensure non-authenticated
+users can't access the view/page by manually entering a path into the address field.
 
 <br/>
 
