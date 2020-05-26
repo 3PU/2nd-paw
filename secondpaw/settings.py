@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 if 'DEVELOPMENT' in os.environ:
     DEBUG = True
 else:
-    DEBUG = False
+    DEBUG = True
 
 ALLOWED_HOSTS = ['localhost',
                 'codei-2nd-paws.herokuapp.com']
@@ -89,13 +89,13 @@ WSGI_APPLICATION = 'secondpaw.wsgi.application'
 
 
 # Database
-#https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-#if "DATABASE_URL" in os.environ:
-#    print("Database found. Using PostgresSQL.")
-#    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
-#else:
-#    print("Database URL not found. Using SQLite instead.")
+if "DATABASE_URL" in os.environ:
+    print("Database found. Using PostgresSQL.")
+    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+else:
+    print("Database URL not found. Using SQLite instead.")
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
