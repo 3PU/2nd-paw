@@ -2,8 +2,6 @@
 
 # 2ndPaw
 
-<br/>
-
 ## Table Of Contents
 
 - General Information
