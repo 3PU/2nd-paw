@@ -26,17 +26,19 @@ def contact(request):
             from_email = form.cleaned_data['from_email']
             message = form.cleaned_data['message']
             try:
-                send_mail(subject,
-                          message,
-                          from_email,
-                          ['support@2ndpaws.com'])
+                send_mail(
+                    subject,
+                    message,
+                    from_email,
+                    ['support@2ndpaws.com']
+                )
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
+
             sweetify.sweetalert(
                 request,
                 """Your message has been sent!
-                We aim to reply to you within 24 hours.
-                """,
+                We aim to reply to you within 24 hours.""",
                 icon="success"
             )
             return redirect('index')
