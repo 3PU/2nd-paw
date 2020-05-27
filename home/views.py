@@ -32,10 +32,12 @@ def contact(request):
                           ['support@2ndpaws.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
-            sweetify.success(request, """
-                                      Your message has been sent!
-                                      We aim to reply to you within 24 hours.
-                                      """,
-                                      icon="success")
+            sweetify.sweetalert(
+                request,
+                """Your message has been sent!
+                We aim to reply to you within 24 hours.
+                """,
+                icon="success"
+            )
             return redirect('index')
     return render(request, "contact.html", {'form': form})
