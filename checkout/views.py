@@ -29,45 +29,54 @@ def checkout(request):
                 product = get_object_or_404(Product, pk=id)
                 total += quantity * product.price
                 order_line_item = OrderLineItem(
-                                                order=order,
-                                                product=product,
-                                                quantity=quantity
-                                                )
+                    order=order,
+                    product=product,
+                    quantity=quantity
+                )
                 order_line_item.save()
 
             try:
                 customer = stripe.Charge.create(
-                                                amount=int(total * 100),
-                                                currency="EUR",
-                                                description=request.user.email,
-                                                card=payment_form.cleaned_data["stripe_id"],
-                                                )
+                    amount=int(total * 100),
+                    currency="EUR",
+                    description=request.user.email,
+                    card=payment_form.cleaned_data["stripe_id"],
+                )
 
             except stripe.error.CardError:
-                sweetify.error(request, "Your card was declined!", icon="error")
+                sweetify.sweetalert(request,
+                                    "Your card was declined!",
+                                    icon="error")
 
             if customer.paid:
-                sweetify.success(request, """"Your order has been placed.
-                                 You will receive an order confirmation
-                                 via email shortly!""",
-                                 icon="success")
+                sweetify.sweetalert(request,
+                                    """"Your order has been placed.
+                                    You will receive an order
+                                    confirmation via email shortly!""",
+                                    icon="success")
                 request.session["cart"] = {}
                 return redirect(reverse("index"))
 
             else:
-                sweetify.error(request, "Unable to process payment!", icon="error")
+                sweetify.sweetalert(request,
+                                    "Unable to process payment!",
+                                    icon="error")
 
         else:
             print(payment_form.errors)
-            sweetify.error(request, """We were unable to process
-                                    the payment with that card!""",
-                                    icon="error")
+            sweetify.sweetalert(request,
+                                """We were unable to process the
+                                payment with that card!""",
+                                icon="error")
 
     else:
         payment_form = MakePaymentForm()
         order_form = OrderForm()
 
-    return render(request, "checkout.html",
-                  {"order_form": order_form,
-                   "payment_form": payment_form,
-                   "publishable": settings.STRIPE_PUBLISHABLE})
+    return render(
+        request, "checkout.html",
+        {"order_form": order_form,
+        "payment_form": payment_form,
+        "publishable": settings.STRIPE_PUBLISHABLE
+        }
+    )
