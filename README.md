@@ -627,7 +627,7 @@ Filename                    | Code      | Validator                             
 | products/templates/product_detail.html | HTML5 | https://validator.w3.org/ | First test passed with 1 HTML errors. Second test passed with 0 errors. | 1 no space between attributes found. |
 | products/templates/products.html | HTML5 | https://validator.w3.org/ | First test passed with 0 errors | n/a |
 | products/forms.py | Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
-| products/models.py | Python3 | http://pep8online.com/ | First test passed with 1 error. Second test passed with 1 errors (unable to rectify). | 1 line too long, unable to rectify. |
+| products/models.py | Python3 | http://pep8online.com/ | First test passed with 1 error. Second test passed with 0 errors. | 1 line too long. |
 | products/test_urls.py | Python3 | http://pep8online.com/ | First test passed with 1 error. Second test passed with 0 errors. | 1 line too long. |
 | products/test_views.py| Python3 | http://pep8online.com/ | First test passed with 1 error. Second test passed with 0 errors. | 1 line too long. |
 | products/test.py | Python3 | http://pep8online.com/ | First test passed with 0 errors. | n/a |
@@ -753,7 +753,7 @@ All of the text content on the website has been written by me.
 
 ### Media
 
-The static images used accross the page were obtained from [Pexels](https://www.pexels.com/) and [Google Images](https://images.google.com/).s
+The static images used accross the page were obtained from [Pexels](https://www.pexels.com/) and [Google Images](https://images.google.com/).
 
 ### Acknowledgements
 
