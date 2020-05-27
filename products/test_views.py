@@ -72,6 +72,8 @@ class TestViewsAuthenticatedUser(TestCase):
         product.save()
 
         page = self.client.get("/products/donate_product/")
-        response = self.client.post("/products/donate_product/",
-                                    {"title": "Create a Test"})
+        response = self.client.post(
+            "/products/donate_product/",
+            {"title": "Create a Test"}
+        )
         self.assertTemplateUsed(page, "create_product.html")

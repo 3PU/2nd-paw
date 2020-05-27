@@ -62,23 +62,32 @@ def donate_product(request, pk=None):
 
         if product_form.is_valid():
             product_form.save()
-            sweetify.success(request, """Thank you for your contribution.
-                                      Your product has been added to the shop!""",
-                                      icon="success")
+            sweetify.sweetalert(
+                request,
+                """Thank you for your contribution.
+                Your product has been added to the shop!""",
+                icon="success"
+            )
             return redirect("all_products")
 
         else:
-            sweetify.error(request, """We could not submit your donation.
-                                    Make sure you enter a correct price
-                                    between 2€-100€.""",
-                                    icon="error")
+            sweetify.sweetalert(
+                request,
+                """We could not submit your donation.
+                Make sure you enter a correct price
+                between 2€-100€.""",
+                icon="error"
+            )
             product_form = CreateProductForm()
 
     else:
         product_form = CreateProductForm()
 
-    return render(request, "create_product.html",
-                           {'product_form': product_form})
+    return render(
+        request,
+        "create_product.html",
+        {'product_form': product_form}
+    )
 
 
 def product_detail(request, id):

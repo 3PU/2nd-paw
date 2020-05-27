@@ -23,10 +23,12 @@ class Product(models.Model):
     animal = models.CharField(max_length=20, choices=animal_choices)
     condition = models.CharField(max_length=20, choices=condition_choices)
     description = models.TextField(max_length=500)
-    price = models.DecimalField(max_digits=5,
-                                decimal_places=2,
-                                validators=[MinValueValidator(Decimal('2.00')),
-                                            MaxValueValidator(Decimal('100.00'))])
+    price = models.DecimalField(
+        max_digits=5,
+        decimal_places=2,
+        validators=[MinValueValidator(Decimal('2.00')),
+        MaxValueValidator(Decimal('100.00'))]
+    )
     image = models.ImageField(upload_to="images")
 
     class Meta:
