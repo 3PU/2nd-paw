@@ -17,20 +17,26 @@ def registration(request):
         if registration_form.is_valid():
             registration_form.save()
 
-            user = auth.authenticate(username=request.POST['username'],
-                                     password=request.POST['password1'])
+            user = auth.authenticate(
+                username=request.POST['username'],
+                password=request.POST['password1']
+            )
 
             if user:
                 auth.login(user=user, request=request)
-                sweetify.success(request, "You have successfully registered!",
-                                 icon="success")
+                sweetify.success(
+                    request, "You have successfully registered!",
+                    icon="success"
+                )
                 return redirect(reverse('index'))
 
             else:
-                sweetify.error(request,
-                               """We're truly sorry. We are unable
-                               to register your account at this time.""",
-                               icon="error")
+                sweetify.error(
+                    request,
+                    """We're truly sorry. We are unable
+                    to register your account at this time.""",
+                    icon="error"
+                )
 
     else:
         registration_form = UserRegistrationForm()
@@ -54,14 +60,18 @@ def login(request):
             if user:
                 auth.login(user=user, request=request)
 
-                sweetify.success(request,
-                                 """You have successfully logged in!""",
-                                 icon="success")
+                sweetify.success(
+                    request,
+                    """You have successfully logged in!""",
+                    icon="success"
+                )
                 return redirect(reverse('index'))
 
             else:
-                login_form.add_error(None,
-                                     "Your username or password is incorrect")
+                login_form.add_error(
+                    None,
+                    "Your username or password is incorrect"
+                )
 
     else:
         login_form = UserLoginForm()
@@ -79,6 +89,8 @@ def userprofile(request):
 def logout(request):
     """Logs out the user"""
     auth.logout(request)
-    sweetify.success(request, "You have successfully been logged out!",
-                     icon="success")
+    sweetify.success(
+        request, "You have successfully been logged out!",
+        icon="success"
+    )
     return redirect(reverse('index'))
