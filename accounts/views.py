@@ -60,7 +60,7 @@ def login(request):
             if user:
                 auth.login(user=user, request=request)
 
-                sweetify.success(
+                sweetify.sweetalert(
                     request,
                     """You have successfully logged in!""",
                     icon="success"
@@ -89,7 +89,7 @@ def userprofile(request):
 def logout(request):
     """Logs out the user"""
     auth.logout(request)
-    sweetify.success(
+    sweetify.sweetalert(
         request, "You have successfully been logged out!",
         icon="success"
     )
