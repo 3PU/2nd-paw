@@ -30,10 +30,11 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 if 'DEVELOPMENT' in os.environ:
     DEBUG = True
 else:
-    DEBUG = True
+    DEBUG = False
 
-ALLOWED_HOSTS = ['localhost',
-                'codei-2nd-paws.herokuapp.com']
+ALLOWED_HOSTS = [
+    'localhost',
+    'codei-2nd-paws.herokuapp.com']
 
 # Application definition
 
