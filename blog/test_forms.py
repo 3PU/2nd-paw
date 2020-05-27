@@ -9,13 +9,19 @@ class TestBlogPostForm(TestCase):
         self.assertFalse(form.is_valid())
 
     def test_can_create_a_blog_post(self):
-        form = BlogPostForm({"title": "TestTitle",
-                             "animal_name": "TestName",
-                             "content": "TestContent"})
+        form = BlogPostForm(
+            {
+                "title": "TestTitle",
+                "animal_name": "TestName",
+                "content": "TestContent"
+            }
+        )
         self.assertTrue(form.is_valid())
 
     def test_correct_message_for_missing_title(self):
         form = BlogPostForm({"title": ""})
         self.assertFalse(form.is_valid())
-        self.assertEqual(form.errors["title"],
-                         [u'This field is required.'])
+        self.assertEqual(
+            form.errors["title"],
+            [u'This field is required.']
+        )

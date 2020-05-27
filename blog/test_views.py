@@ -8,7 +8,10 @@ class TestViews(TestCase):
     def setUp(self):
         self.factory = RequestFactory()
         self.user = User.objects.create_user(
-            username='jacob', email='jacob@…', password='top_secret')
+            username='jacob',
+            email='jacob@…',
+            password='top_secret'
+        )
         self.client.login(username=self.user.username, password='top_secret')
 
     def test_get_blogpost_page(self):

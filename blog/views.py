@@ -28,11 +28,14 @@ def create_blog_post(request):
             """Imports full name from user profile"""
             blog_post.author = request.user
             blog_post.save()
-            sweetify.success(request, """Thank you for your
-                                      contribution. Your blog
-                                      post has been posted
-                                      successfully!""",
-                                      icon="success")
+            sweetify.success(
+                request,
+                """Thank you for your
+                contribution. Your blog
+                post has been posted
+                successfully!""",
+                icon="success"
+            )
             return redirect("get_blog_posts")
 
         else:
@@ -40,4 +43,8 @@ def create_blog_post(request):
 
     else:
         blog_form = BlogPostForm()
-    return render(request, "create_blogpost.html", {'blog_form': blog_form})
+    return render(
+        request,
+        "create_blogpost.html",
+        {'blog_form': blog_form}
+    )
